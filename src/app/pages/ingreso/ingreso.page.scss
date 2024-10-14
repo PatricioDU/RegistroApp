@@ -1,0 +1,28 @@
+ion-content{
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-end: 20px;
+  --padding-start: 20px;
+}
+
+ion-toolbar{
+  background-color: var(--ion-color-warning);
+}
+
+// .center-container {
+//   display: flex;
+//   justify-content: center; /* Centra horizontalmente */
+//   align-items: center;     /* Centra verticalmente */
+//   height: 100%;           /* Ocupa toda la altura de la pantalla */
+// }
+
+.foto-portada {
+  width: 100%;
+}
+
+@media screen and (orientation: landscape) {
+  .center-container {
+    width: 40%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">inicio</ion-title>
+    </ion-toolbar>  
+  </ion-header>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-padding-horizontal ion-padding-top ion-padding-bottom toolbar-inferior">
+
+    <ion-button   size="small" shape="round" 
+              (click)="navegar('/misdatos')"  >
+              <ion-icon slot="start" name="person"></ion-icon>
+                Mis Datos 
+              </ion-button>  
+
+    &nbsp;&nbsp;&nbsp;
+    
+      <ion-button  size="small" shape="round" 
+      (click)="navegar('/inicio')"  >
+        <ion-icon slot="start" name="home"></ion-icon>
+      Inicio
+    </ion-button>
+
+    &nbsp;&nbsp;&nbsp;
+
+      <ion-button  size="small" shape="round" 
+      (click)="navegar('/miclase')">
+        <ion-icon slot="start" name="qr-code"></ion-icon>
+      Mis Clases
+    </ion-button>
+
+    &nbsp;&nbsp;&nbsp;
+
+      <ion-button  size="small" shape="round" 
+      (click)="navegar('/login')">
+      <ion-icon slot="start" name="log-out"></ion-icon>
+      Salir
+    </ion-button>
+
+
+  </ion-toolbar>
+</ion-footer>
