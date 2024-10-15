@@ -78,7 +78,7 @@ export class AuthService {
         showToast(`¡Hasta pronto ${usuario.nombre} ${usuario.apellido}!`);
         this.eliminarUsuarioAutenticado(usuario);
       }
-      this.router.navigate(['/login']);
+      this.router.navigate(['/ingreso']);
     })
   }
 
