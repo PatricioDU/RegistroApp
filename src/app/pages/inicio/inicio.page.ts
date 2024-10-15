@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Asistencia } from 'src/app/model/asistencia';
+import { Asistencia } from 'src/app/interfaces/asistencia';
 import { Usuario } from 'src/app/model/usuario';
 
 @Component({
