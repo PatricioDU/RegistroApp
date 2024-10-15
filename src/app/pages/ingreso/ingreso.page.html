@@ -23,19 +23,19 @@
         </ion-card-header>
 
         <ion-item>
-          <ion-input [(ngModel)]="usuario.cuenta" 
+          <ion-input [(ngModel)]="correo" 
               label="Cuenta" labelPlacement="floating"
               placeholder="Ej: atorres"></ion-input>
         </ion-item>
 
         <ion-item>
-          <ion-input [(ngModel)]="usuario.password" 
+          <ion-input [(ngModel)]="password" 
               label="Contraseña" labelPlacement="floating" type="password"
               placeholder="Ej: 1234"></ion-input>
         </ion-item>
 
         <div class="ion-margin-top">
-          <ion-button color="warning" shape="round" size="small" (click)="ingresar()">
+          <ion-button color="warning" shape="round" size="small" (click)="Ingresar()">
             Ingresar
           </ion-button>
         </div>    

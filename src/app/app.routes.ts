@@ -5,7 +5,7 @@ import { inicioGuard } from './guards/inicio-guard.service';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'ingreso',
     pathMatch: 'full',
   },
   {
@@ -22,4 +22,9 @@ export const routes: Routes = [
     path: 'theme',
     loadComponent: () => import('./pages/theme/theme.page').then( m => m.ThemePage)
   },
+  {
+    path: 'ingreso',
+    loadComponent: () => import('./pages/ingreso/ingreso.page').then(m => m.ingresoPage),
+    canActivate: [ingresoGuard]
+  }
 ];

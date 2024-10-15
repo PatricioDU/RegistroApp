@@ -17,7 +17,7 @@ export const inicioGuard: CanActivateFn = async (route, state) => {
     return true;
   } else {
     // Si el usuario no está autenticado lo devuelve a la página de ingreso
-    router.navigate(['/login']);
+    router.navigate(['/ingreso']);
     // Pero le niega la entrada a la página de inicio
     return false;    
   }

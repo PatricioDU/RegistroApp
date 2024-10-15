@@ -1,44 +1,43 @@
-import { Component } from '@angular/core';
-import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
-import { Usuario } from 'src/app/model/usuario';
-
+import { Component, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { ViewWillEnter } from '@ionic/angular';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageComponent } from 'src/app/components/language/language.component';
+import { Router } from '@angular/router';
+import { colorWandOutline } from 'ionicons/icons';
+import { addIcons } from 'ionicons';
+import { AuthService } from 'src/app/services/auth.service'
 @Component({
   selector: 'app-ingreso',
   templateUrl: './ingreso.page.html',
   styleUrls: ['./ingreso.page.scss'],
+  standalone: true,
+  imports: [
+      CommonModule            // CGV-Permite usar directivas comunes de Angular
+    , FormsModule             // CGV-Permite usar formularios
+    , IonicModule             // CGV-Permite usar componentes de Ionic como IonContent, IonItem, etc.
+    , TranslateModule         // CGV-Permite usar pipe 'translate'
+    , LanguageComponent       // CGV-Lista de idiomas
+  ]
 })
 export class ingresoPage {
 
-  public usuario: Usuario;
+  password: string;
+  correo: string;
 
   constructor(
-      private router: Router
-    , private activatedRoute: ActivatedRoute
-    , private toastController: ToastController) 
+    private router: Router
+    , private translate: TranslateService
+    , private authService: AuthService) 
   {
-    this.usuario = new Usuario();
-    this.usuario.recibirUsuario(activatedRoute, router);
-    this.usuario.cuenta = 'atorres';
-    this.usuario.password = '1234';
+    this.correo = 'atorres';
+    this.password = '1234';
   }
 
-  ingresar() {
-    const error = this.usuario.validarUsuario();
-    if(error) {
-      this.mostrarMensajeEmergente(error);
-      return;
-    } 
-    this.mostrarMensajeEmergente('¡Bienvenido(a) al Sistema de Asistencia DUOC!');
-    this.usuario.navegarEnviandousuario(this.router, '/inicio');
-  }
-
-  async mostrarMensajeEmergente(mensaje: string, duracion?: number) {
-    const toast = await this.toastController.create({
-        message: mensaje,
-        duration: duracion? duracion: 2000
-      });
-    toast.present();
+  Ingresar() {
+    this.authService.login(this.correo, this.password);
   }
 
 }
