@@ -17,13 +17,7 @@ import jsQR, { QRCode } from 'jsqr';
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
   standalone: true,
-  imports: [
-      CommonModule            // CGV-Permite usar directivas comunes de Angular
-    , FormsModule             // CGV-Permite usar formularios
-    , IonicModule             // CGV-Permite usar componentes de Ionic como IonContent, IonItem, etc.
-    , TranslateModule         // CGV-Permite usar pipe 'translate'
-    , LanguageComponent       // CGV-Lista de idiomas
-  ]
+  imports: [IonIcon, IonButton, IonFooter, IonContent, IonTitle, IonToolbar, IonHeader, FooterComponent, HeaderComponent]
 })
 export class InicioPage {
 
