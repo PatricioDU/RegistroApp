@@ -26,7 +26,7 @@ export class misdatosPage implements OnInit {
 
   ngOnInit() { 
     this.authService.usuarioAutenticado.subscribe((usuario)) => {
-      this.usuario = usuario? suario : new Usuario();
+      this.usuario = usuario? usuario : new Usuario();
     }
   }
       
