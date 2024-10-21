@@ -30,6 +30,12 @@ export const routes: Routes = [
   {
     path: 'inicio',
     loadComponent: () => import('./pages/inicio/inicio.page').then(m => m.InicioPage),
+    canActivate: [inicioGuard]
+  },
+
+  {
+    path: 'misdatos',
+    loadComponent: () => import('./pages/misdatos/misdatos.page').then(m => m.misdatosPage),
   }
   
 ];

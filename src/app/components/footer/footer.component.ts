@@ -20,4 +20,8 @@ export class FooterComponent {
 
   constructor() { }
 
+  navegar(page: string) {
+
+  }
+
 }

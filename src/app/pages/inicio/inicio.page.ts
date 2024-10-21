@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -11,6 +12,15 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service'
 import { LoadingController } from '@ionic/angular';
 import jsQR, { QRCode } from 'jsqr';
+=======
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Asistencia } from 'src/app/interfaces/asistencia';
+import { Usuario } from 'src/app/model/usuario';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonFooter, IonButton, IonIcon } from "@ionic/angular/standalone";
+import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { HeaderComponent } from 'src/app/components/header/header.component';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-inicio',
