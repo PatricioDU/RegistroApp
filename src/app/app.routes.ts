@@ -35,5 +35,6 @@ export const routes: Routes = [
   {
     path: 'misdatos',
     loadComponent: () => import('./pages/misdatos/misdatos.page').then(m => m.misdatosPage),
+    
   }
 ];

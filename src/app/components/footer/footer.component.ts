@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IonicModule } from '@ionic/angular';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -17,10 +17,12 @@ import { IonicModule } from '@ionic/angular';
   ]
 })
 export class FooterComponent {
+  router: any;
 
   constructor() { }
 
   navegar(page: string) {
+    this.router.navigate([page]);
 
   }
 
