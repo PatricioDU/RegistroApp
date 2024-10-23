@@ -38,6 +38,7 @@ export class APIClientService {
     return this.http.post(this.apiUrl + '/publicaciones/', publicacion, this.httpOptions);
   }
 
+  
   leerPublicaciones(): Observable<any> {
     return this.http.get(this.apiUrl + '/publicaciones/');
   }
