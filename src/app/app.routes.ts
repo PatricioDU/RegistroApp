@@ -35,5 +35,10 @@ export const routes: Routes = [
   {
     path: 'misdatos',
     loadComponent: () => import('./pages/misdatos/misdatos.page').then(m => m.misdatosPage),
+  },
+  {
+    path: 'codigoqr',
+    loadChildren: () => import('./pages/codigoqr/codigoqr.page').then(m => m.CodigoqrPage)
   }
+
 ];
