@@ -49,6 +49,7 @@
                 matInput 
                 [matDatepicker]="fechaNacimiento" 
                 [(ngModel)]="usuario.fechaNacimiento"
+                [ngModelOptions]="{standalone: true}" 
                 placeholder="dd/mm/yyyy"
                 class="date-width">
             </td>

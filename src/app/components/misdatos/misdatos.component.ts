@@ -22,7 +22,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule, 
     MatNativeDateModule, 
     IonHeader, 
-    IonTitle
+    IonTitle,
   ],
 
 })

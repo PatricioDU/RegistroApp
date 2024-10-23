@@ -105,7 +105,7 @@ export class DataBaseService {
   async guardarUsuario(usuario: Usuario): Promise<void> {
     await this.db.run(this.sqlInsertUpdate, [usuario.cuenta, usuario.correo, usuario.password,
       usuario.preguntaSecreta, usuario.respuestaSecreta, usuario.nombre, usuario.apellido,
-      usuario.nivelEducacional.id, usuario.fechaNacimiento?.getTime(),usuario.direccion]);
+      usuario.nivelEducacional.id, this.formatDateToDDMMYYYY(usuario.fechaNacimiento),usuario.direccion]);
     await this.leerUsuarios();
   }
 
@@ -117,15 +117,55 @@ export class DataBaseService {
   // ReadAll del CRUD. Si existen registros entonces convierte los registros en una lista de usuarios
   // con la instrucción ".values as Usuario[];". Si la tabla no tiene registros devuelve null.
   async leerUsuarios(): Promise<void> {
-    const usuarios: Usuario[]= (await this.db.query('SELECT * FROM USUARIO;')).values as Usuario[];
-    this.listaUsuarios.next(usuarios);
+    
+    const rows: any = (await this.db.query('SELECT * FROM USUARIO;')).values;
+  
+    const usuarios: Usuario[] = [];
+    rows.forEach((row: any) => {
+      const usu = new Usuario();
+      usu.cuenta = row['cuenta'];
+      usu.correo = row['correo'];
+      usu.password = row['password'];
+      usu.preguntaSecreta = row['preguntaSecreta'];
+      usu.respuestaSecreta = row['respuestaSecreta'];
+      usu.nombre = row['nombre'];
+      usu.apellido = row['apellido'];
+      usu.nivelEducacional = NivelEducacional.buscarNivelEducacional(row['nivelEducacional'])!; // Asegúrate de que el valor en la BD es compatible con el tipo `NivelEducacional`
+      usu.fechaNacimiento = this.stringToDate(row['fechaNacimiento'])!; // Verificamos si existe y convertimos a Date
+      usu.direccion = row['direccion'];
+  
+      usuarios.push(usu); // Agregamos el objeto Usuario a la lista
+    });
+  
+    this.listaUsuarios.next(usuarios); // Actualizamos la lista de usuarios
   }
+  
 
   // Read del CRUD
   async leerUsuario(cuenta: string): Promise<Usuario | undefined> {
-    const usuarios: Usuario[]= (await this.db.query(
+
+    const rows: any = (await this.db.query(
       'SELECT * FROM USUARIO WHERE cuenta=?;', 
       [cuenta])).values as Usuario[];
+
+    const usuarios: Usuario[] = [];
+      rows.forEach((row: any) => {
+        const usu = new Usuario();
+        usu.cuenta = row['cuenta'];
+        usu.correo = row['correo'];
+        usu.password = row['password'];
+        usu.preguntaSecreta = row['preguntaSecreta'];
+        usu.respuestaSecreta = row['respuestaSecreta'];
+        usu.nombre = row['nombre'];
+        usu.apellido = row['apellido'];
+        usu.nivelEducacional = NivelEducacional.buscarNivelEducacional(row['nivelEducacional'])!; // Asegúrate de que el valor en la BD es compatible con el tipo `NivelEducacional`
+        usu.fechaNacimiento = this.stringToDate(row['fechaNacimiento'])!; // Verificamos si existe y convertimos a Date
+        usu.direccion = row['direccion'];
+    
+        usuarios.push(usu); // Agregamos el objeto Usuario a la lista
+      });
+      alert(usuarios[0].cuenta)
+      alert(usuarios[0].fechaNacimiento)
     return usuarios[0];
   }
 
@@ -152,4 +192,29 @@ export class DataBaseService {
     return usuarios[0];
   }
 
+  formatDateToDDMMYYYY(date: Date | undefined): string {
+    if (date) {
+      const day = String(date.getDate()).padStart(2, '0'); // Obtiene el día y lo convierte en 2 dígitos
+      const month = String(date.getMonth() + 1).padStart(2, '0'); // Obtiene el mes (los meses empiezan en 0) y lo convierte en 2 dígitos
+      const year = date.getFullYear(); // Obtiene el año
+    
+      return `${day}/${month}/${year}`; // Formato dd/mm/yyyy
+    } else {
+      return '01/01/2000';
+    }
+  }
+
+  stringToDate(dateString: string): Date | null {
+    const [day, month, year] = dateString.split('/').map(Number); // Separamos por '/' y convertimos a número
+  
+    // Validamos si el formato es correcto
+    if (!day || !month || !year || day > 31 || month > 12 || year < 1000) {
+      return null; // Devuelve null si el formato es inválido
+    }
+  
+    // Restamos 1 al mes porque en JavaScript los meses están basados en 0 (enero = 0, diciembre = 11)
+    return new Date(year, month - 1, day);
+  }
+
+  
 }

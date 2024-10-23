@@ -35,7 +35,8 @@ export class AuthService {
   }
 
   async leerUsuarioAutenticado(): Promise<Usuario | null> {
-    const usuario = await this.storage.get(this.keyUsuario) as Usuario;
+    const usuario: any = await this.storage.get(this.keyUsuario);
+    usuario.fechaNacimiento = this.stringToDate(usuario.fechaNacimiento);
     this.usuarioAutenticado.next(usuario);
     return usuario;
   }
@@ -82,4 +83,39 @@ export class AuthService {
     })
   }
 
+  formatDateToDDMMYYYY(date: Date | undefined): string {
+    if (date) {
+      const day = String(date.getDate()).padStart(2, '0'); // Obtiene el día y lo convierte en 2 dígitos
+      const month = String(date.getMonth() + 1).padStart(2, '0'); // Obtiene el mes (los meses empiezan en 0) y lo convierte en 2 dígitos
+      const year = date.getFullYear(); // Obtiene el año
+    
+      return `${day}/${month}/${year}`; // Formato dd/mm/yyyy
+    } else {
+      return '01/01/2000';
+    }
+  }
+
+  stringToDate(dateString: string): Date | null {
+    const [day, month, year] = dateString.split('/').map(Number); // Separamos por '/' y convertimos a número
+  
+    // Validamos si el formato es correcto
+    if (!day || !month || !year || day > 31 || month > 12 || year < 1000) {
+      return null; // Devuelve null si el formato es inválido
+    }
+  
+    // Restamos 1 al mes porque en JavaScript los meses están basados en 0 (enero = 0, diciembre = 11)
+    return new Date(year, month - 1, day);
+  }
+
+  stringToDate2(dateString: string): Date {
+    const [day, month, year] = dateString.split('/').map(Number); // Separamos por '/' y convertimos a número
+  
+    // Validamos si el formato es correcto
+    if (!day || !month || !year || day > 31 || month > 12 || year < 1000) {
+      return new Date(); // Devuelve null si el formato es inválido
+    }
+  
+    // Restamos 1 al mes porque en JavaScript los meses están basados en 0 (enero = 0, diciembre = 11)
+    return new Date(year, month - 1, day);
+  }
 }
