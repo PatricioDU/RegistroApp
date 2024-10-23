@@ -1,4 +1,3 @@
-import { MisdatosComponent } from './../../components/misdatos/misdatos.component';
 import { AuthService } from './../../services/auth.service';
 import { Usuario } from 'src/app/model/usuario';
 import { CommonModule } from "@angular/common";
@@ -9,17 +8,14 @@ import { DataBaseService } from 'src/app/services/data-base.service';
 import { showAlertDUOC, showToast } from 'src/app/tools/message-routines';
 import { AnimationController} from '@ionic/angular';
 import {MatDatepicker, MatDatepickerModule} from '@angular/material/datepicker';
-import { FooterComponent } from 'src/app/components/footer/footer.component';
-
 @Component({
-  selector: 'app-home',
-  templateUrl: 'misdatos.page.html',
-  styleUrls: ['misdatos.page.scss'],
+  selector: 'app-misdatos',
+  templateUrl: './misdatos.component.html',
+  styleUrls: ['./misdatos.component.scss'],
   standalone: true,
-  imports: [IonicModule,CommonModule,FormsModule,MatDatepickerModule, MatDatepicker,MisdatosComponent,FooterComponent],
+  imports: [IonicModule,CommonModule,FormsModule,MatDatepickerModule, MatDatepicker],
 })
-
-export class misdatosPage implements OnInit {
+export class MisdatosComponent  implements OnInit {
 
   usuario = new Usuario();
   repeticionPassword = '';
@@ -91,12 +87,6 @@ animarRotacion(elementRef: any, duration: number) {
     this.authService.guardarUsuarioAutenticado(this.usuario);
     showToast('sus datos fueron actualizados');
   }
-
-
-
-
-
-
 
 
 

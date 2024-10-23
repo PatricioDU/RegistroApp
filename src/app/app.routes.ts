@@ -39,6 +39,7 @@ export const routes: Routes = [
   {
     path: 'codigoqr',
     loadChildren: () => import('./pages/codigoqr/codigoqr.page').then(m => m.CodigoqrPage)
+    
   }
 
 ];
