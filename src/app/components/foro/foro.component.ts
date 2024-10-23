@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Publicacion } from 'src/app/model/publicacion';
 import { Usuario } from 'src/app/model/usuario';
-import { APIClientService } from 'src/app/services/apiclient.service';
+import { apiClientService } from 'src/app/services/api-client.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { showAlertDUOC, showToast } from 'src/app/tools/message-routines';
 
@@ -23,7 +23,7 @@ export class ForoComponent  implements OnInit {
   publicacion: Publicacion = new Publicacion();
   publicaciones: any;
 
-  constructor(private authService: AuthService, private api: APIClientService) { }
+  constructor(private authService: AuthService, private api: apiClientService) { }
 
   ngOnInit() {
     this.api.listaPublicaciones.subscribe((publicaciones) => {
