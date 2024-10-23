@@ -8,12 +8,23 @@ import { DataBaseService } from 'src/app/services/data-base.service';
 import { showAlertDUOC, showToast } from 'src/app/tools/message-routines';
 import { AnimationController} from '@ionic/angular';
 import {MatDatepicker, MatDatepickerModule} from '@angular/material/datepicker';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem,IonInput,IonLabel,  } from "@ionic/angular/standalone";
+import { MatNativeDateModule } from '@angular/material/core';
 @Component({
   selector: 'app-misdatos',
   templateUrl: './misdatos.component.html',
   styleUrls: ['./misdatos.component.scss'],
   standalone: true,
-  imports: [IonicModule,CommonModule,FormsModule,MatDatepickerModule, MatDatepicker],
+  imports: [
+    IonicModule, 
+    CommonModule, 
+    FormsModule, 
+    MatDatepickerModule, 
+    MatNativeDateModule, 
+    IonHeader, 
+    IonTitle
+  ],
+
 })
 export class MisdatosComponent  implements OnInit {
 
