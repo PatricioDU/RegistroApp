@@ -47,7 +47,7 @@ import { DataBaseService } from './app/services/data-base.service';
 import { InitializeAppService } from './app/services/initialize.app.service';
 import { AuthService } from './app/services/auth.service';
 import { Storage } from '@ionic/storage-angular';
-import { APIClientService } from './app/services/apiclient.service';
+import { apiClientService } from './app/services/api-client.service';
 import { IonicModule } from '@ionic/angular';
 
 const platform = Capacitor.getPlatform();
@@ -88,7 +88,7 @@ bootstrapApplication(AppComponent, {
     DataBaseService,
     AuthService,
     Storage,
-    APIClientService,
+    apiClientService,
     {
       provide: APP_INITIALIZER,
       useFactory: initializeFactory,
