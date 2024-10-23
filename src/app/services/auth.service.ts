@@ -36,8 +36,15 @@ export class AuthService {
 
   async leerUsuarioAutenticado(): Promise<Usuario | null> {
     const usuario: any = await this.storage.get(this.keyUsuario);
-    usuario.fechaNacimiento = this.stringToDate(usuario.fechaNacimiento);
-    this.usuarioAutenticado.next(usuario);
+    
+    if (usuario) {
+      // Asegúrate de verificar y convertir la fecha correctamente
+      usuario.fechaNacimiento = this.stringToDate(usuario.fechaNacimiento);
+      this.usuarioAutenticado.next(usuario);
+    } else {
+      this.usuarioAutenticado.next(null);
+    }
+  
     return usuario;
   }
 
@@ -95,7 +102,18 @@ export class AuthService {
     }
   }
 
-  stringToDate(dateString: string): Date | null {
+  stringToDate(dateString: any): Date | null {
+    // Verifica si dateString ya es un objeto Date
+    if (dateString instanceof Date) {
+      return dateString;
+    }
+    
+    // Si dateString no es un string, devuelve null
+    if (typeof dateString !== 'string') {
+      return null;
+    }
+  
+    // Continuamos con la conversión solo si dateString es un string
     const [day, month, year] = dateString.split('/').map(Number); // Separamos por '/' y convertimos a número
   
     // Validamos si el formato es correcto
@@ -106,6 +124,7 @@ export class AuthService {
     // Restamos 1 al mes porque en JavaScript los meses están basados en 0 (enero = 0, diciembre = 11)
     return new Date(year, month - 1, day);
   }
+  
 
   stringToDate2(dateString: string): Date {
     const [day, month, year] = dateString.split('/').map(Number); // Separamos por '/' y convertimos a número

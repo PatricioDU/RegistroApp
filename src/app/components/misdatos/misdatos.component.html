@@ -33,10 +33,16 @@
         <ion-input [(ngModel)]="usuario.apellido" placeholder="Ingrese su apellido"></ion-input>
       </ion-item>
 
-      <ion-item #itemEducacion>
-        <ion-label class="font-size-16">Educación</ion-label>
-        <ion-input [(ngModel)]="usuario.nivelEducacional.nombre" placeholder="Ingrese su nivel educativo"></ion-input>
+      <ion-item>
+        <ion-label class="font-size-16">Nivel Educacional</ion-label>
+        <ion-select [(ngModel)]="usuario.nivelEducacional" interface="popover">
+          <ion-select-option *ngFor="let nivel of nivelesEducacionales" [value]="nivel">
+            {{ nivel.nombre }}
+          </ion-select-option>
+        </ion-select>
       </ion-item>
+
+      
 
       <ion-item #itemFechaNacimiento>
         <table>
