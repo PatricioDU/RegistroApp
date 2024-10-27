@@ -99,15 +99,17 @@ export class ForoComponent  implements OnInit {
     });
   }
 
-  eliminarPublicacion(pub: any) {
-    if (pub.correo !== this.usuario.correo) {
+   eliminarPublicacion(pub: any) {
+     if (pub.correo !== this.usuario.correo) {
       showAlertDUOC('Sólo puede eliminar las publicaciones a su nombre');
       return;
-    }
-    this.api.eliminarPublicacion(pub.id).subscribe({
-      next: (publicacion) => this.mensajePublicacion('eliminada', pub.id),
-      error: (error) => showToast('El servicio API Rest de Publicaciones no está disponible')
-    });
-  }
+     }
+     this.api.eliminarPublicacion(pub.id).subscribe({
+       next: (publicacion) => this.mensajePublicacion('eliminada', pub.id),
+       error: (error) => showToast('El servicio API Rest de Publicaciones no está disponible')
+     });
+   }
+
+  
 
 }
