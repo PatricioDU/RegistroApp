@@ -5,15 +5,14 @@ import { Usuario } from 'src/app/model/usuario';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonFooter, IonButton, IonIcon } from "@ionic/angular/standalone";
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
-import { ForoComponent } from "../../components/foro/foro.component";
-
+import { foroComponent } from 'src/app/components/foro/foro.component';
 
 @Component({
     selector: 'app-inicio',
     templateUrl: './inicio.page.html',
     styleUrls: ['./inicio.page.scss'],
     standalone: true,
-    imports: [IonIcon, IonButton, IonFooter, IonContent, IonTitle, IonToolbar, IonHeader, FooterComponent, HeaderComponent, ForoComponent]
+    imports: [IonIcon, IonButton, IonFooter, IonContent, IonTitle, IonToolbar, IonHeader, FooterComponent, HeaderComponent, foroComponent]
 })
 export class InicioPage {
 

@@ -287,7 +287,7 @@ rem ++++++ OPCION 13: Ejecutar JSON-SERVER usando localhost ++++++
 :opcion13
 cls
 call :ver "[13] Ejecutar JSON-SERVER usando localhost"
-call json-server --watch .\_JSON-SERVER\publicaciones.json
+call json-server --watch .\_JSON-SERVER\posts.json
 exit /b
 
 
