@@ -28,7 +28,8 @@ export class ingresoPage {
   correo: string;
 
   constructor( 
-    private authService: AuthService) 
+    private authService: AuthService
+   , private router: Router) 
   {
     this.correo = 'atorres';
     this.password = '1234';
@@ -36,6 +37,10 @@ export class ingresoPage {
 
   Ingresar() {
     this.authService.login(this.correo, this.password);
+  }
+
+  navegarcorreo() {
+    this.router.navigate(['/correo']);
   }
 
 }

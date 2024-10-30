@@ -184,11 +184,20 @@ export class DataBaseService {
     return usuarios[0];
   }
 
+
   // Validar usuario
   async buscarUsuarioPorCuenta(cuenta: string): Promise<Usuario | undefined> {
     const usuarios: Usuario[]= (await this.db.query(
       'SELECT * FROM USUARIO WHERE cuenta=?;',
       [cuenta])).values as Usuario[];
+    return usuarios[0];
+  }
+
+  // validar por correo
+  async buscarUsuarioPorCorreo(correo: string): Promise<Usuario | undefined> {
+    const usuarios: Usuario[]= (await this.db.query(
+      'SELECT * FROM USUARIO WHERE correo=?;',
+      [correo])).values as Usuario[];
     return usuarios[0];
   }
 

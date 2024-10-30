@@ -79,6 +79,25 @@ export class AuthService {
       }
     });
   }
+  async irAPregunta(correo: string) {
+    await this.storage.get(this.keyUsuario).then(async (usuarioAutenticado) => {
+      if (usuarioAutenticado) {
+        this.usuarioAutenticado.next(usuarioAutenticado);
+        this.router.navigate(['/pregunta']);
+      } else {
+        const usuario = await this.bd.buscarUsuarioPorCorreo(correo);
+        if (usuario) {
+          this.guardarUsuarioAutenticado(usuario);
+          showToast(`¡Bienvenido(a) ${usuario.nombre} ${usuario.apellido}!`);
+          this.router.navigate(['/pregunta']);
+        } else {
+          showToast(`El correo proporcionado no está registrado.`);
+          this.router.navigate(['/login']);
+        }
+      }
+    });
+  }
+  
 
   async logout() {
     this.leerUsuarioAutenticado().then((usuario) => {

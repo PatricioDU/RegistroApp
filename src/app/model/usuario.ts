@@ -3,6 +3,7 @@ import { Persona } from "./persona";
 import { Asistencia } from '../interfaces/asistencia';
 import { DataBaseService } from '../services/data-base.service';
 import { Optional } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 
 export class Usuario extends Persona {
 
@@ -101,4 +102,13 @@ export class Usuario extends Persona {
       ${this.direccion}`;
   }
 
+  navegarEnviandousuario(router: Router, pagina: string) {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        cuenta: this.cuenta,
+        password: this.password,
+      }
+    }
+    router.navigate([pagina], navigationExtras);
+  }
 }
