@@ -1,4 +1,4 @@
-<!-- +<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true">
   <div class="parent">
     <div class="div1">
       <ion-card class="ion-text-center">
@@ -7,18 +7,18 @@
           <ion-card-header class="titulo">
             <ion-card-title>Recuperar Contraseña</ion-card-title>
             <ion-card-subtitle>Paso 2:Responde la pregunta secreta</ion-card-subtitle>
-            <ion-card-subtitle><strong>{{ usuario.nombre }} {{ usuario.apellido }}</strong></ion-card-subtitle>
+            <!-- <ion-card-subtitle><strong>{{ usuario.nombre }} {{ usuario.apellido }}</strong></ion-card-subtitle> -->
           </ion-card-header>
           <ion-item>
-            <ion-input
+            <!-- <ion-input
             [(ngModel)]="usuario.respuestaSecreta"
             label={{usuario.preguntaSecreta}} 
             labelPlacement="floating"
-            ></ion-input>
+            ></ion-input> -->
           </ion-item>
         </ion-card-content>
         <div>
-          <ion-button color="warning" size="default" (click)="ingresar()">Recuperar Contraseña</ion-button>
+          <!-- <ion-button color="warning" size="default" (click)="ingresar()">Recuperar Contraseña</ion-button> -->
         </div>
       </ion-card>
       <ion-card-content>
@@ -28,4 +28,4 @@
       </ion-card-content>
     </div>
   </div>
-</ion-content> -->
+</ion-content>
