@@ -14,7 +14,7 @@ import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { Capacitor } from '@capacitor/core';
 import { Clase } from 'src/app/model/clase';
 import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
-import { Html5Qrcode, Html5QrcodeScanner, Html5QrcodeSupportedFormats } from 'html5-qrcode';
+
 
 
 @Component({
