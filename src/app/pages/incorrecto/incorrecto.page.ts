@@ -23,6 +23,6 @@ export class IncorrectoPage {
   constructor(private router: Router) { }
 
   goToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/ingreso']);
   }
 }
