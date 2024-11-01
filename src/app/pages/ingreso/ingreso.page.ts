@@ -43,4 +43,8 @@ export class ingresoPage {
     this.router.navigate(['/correo']);
   }
 
+  navigateTheme() {
+    this.router.navigate(['/theme']);
+  }
+
 }
