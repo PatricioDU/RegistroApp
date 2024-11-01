@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CodigoqrComponent } from './codigoqr.component';
+import { WelcomeComponent } from './welcome.component';
 
-describe('CodigoqrComponent', () => {
-  let component: CodigoqrComponent;
-  let fixture: ComponentFixture<CodigoqrComponent>;
+describe('WelcomeComponent', () => {
+  let component: WelcomeComponent;
+  let fixture: ComponentFixture<WelcomeComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CodigoqrComponent ],
+      declarations: [ WelcomeComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CodigoqrComponent);
+    fixture = TestBed.createComponent(WelcomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

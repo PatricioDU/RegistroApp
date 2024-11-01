@@ -21,6 +21,8 @@ export class AuthService {
   // las componentes, pero se dejan tal como están y no se limpian, si el suario
   // cierra al aplicación y la vuelve a abrir sin haber previamente cerrado la sesión.
   primerInicioSesion =  new BehaviorSubject<boolean>(false);
+  qrCodeData: any;
+  authUser: any;
 
   constructor(private router: Router, private bd: DataBaseService, private storage: Storage) { }
 

@@ -21,6 +21,7 @@ import { logOutOutline } from 'ionicons/icons';
 })
 export class FooterComponent {
 
+  selectedButton = 'welcome';
   constructor(private router: Router,private navctrl: NavController,private authservice: AuthService) {
     addIcons({ logOutOutline }); }
 

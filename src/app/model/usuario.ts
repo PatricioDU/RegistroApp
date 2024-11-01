@@ -6,6 +6,9 @@ import { Optional } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 
 export class Usuario extends Persona {
+  static jsonDinoExample(jsonDinoExample: any) {
+      throw new Error('Method not implemented.');
+  }
 
   public cuenta: string;
   public correo: string;
