@@ -22,7 +22,7 @@ import { LanguageComponent } from 'src/app/components/language/language.componen
 export class IncorrectoPage {
   constructor(private router: Router) { }
 
-  goToLogin() {
+  ingresar() {
     this.router.navigate(['/ingreso']);
   }
 }

@@ -201,6 +201,18 @@ export class DataBaseService {
     return usuarios[0];
   }
 
+  // validar respuesta
+  async buscarUsuarioPorPregunta(pregunta: string): Promise<Usuario | undefined> {
+    const usuarios: Usuario[] = (await this.db.query(
+      'SELECT * FROM USUARIO WHERE preguntaSecreta=?;',
+      [pregunta]
+    )).values as Usuario[];
+  
+    return usuarios[0];
+  }
+  
+  
+
   formatDateToDDMMYYYY(date: Date | undefined): string {
     if (date) {
       const day = String(date.getDate()).padStart(2, '0'); // Obtiene el día y lo convierte en 2 dígitos

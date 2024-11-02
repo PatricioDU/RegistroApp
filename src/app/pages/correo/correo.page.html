@@ -2,7 +2,7 @@
   <div class="parent">
     <div class="div1">
       <ion-card class="ion-text-center">
-        <img alt="DUOC" src="../../../assets/images/sede_padre_alonso.jpg" class="foto-portada" />
+        <img alt="DUOC" src="../../../assets/images/duoc.png" class="foto-portada" />
         <ion-card-content>
           <ion-card-header class="titulo">
             <ion-card-title>Recuperar Contraseña</ion-card-title>
@@ -19,13 +19,13 @@
           ></ion-input>
         </ion-card-content>
         <div>
-           <ion-button color="warning" size="default" (click)="navegarPregunta()">Recuperar Contraseña</ion-button> 
+           <ion-button (click)="navegarPregunta()">Recuperar Contraseña</ion-button> 
         </div>
       </ion-card>
       <ion-card-content>
         <div class="ion-text-center">
-          <a routerLink="">Iniciar Sesion</a>
-        </div>
+          <ion-button size="small" (click)="Ingreso()">Iniciar Sesion</ion-button> 
+       </div>
       </ion-card-content>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
@@ -22,7 +22,25 @@ import { AuthService } from 'src/app/services/auth.service'
     , LanguageComponent       // CGV-Lista de idiomas
   ]
 })
-export class CorrectoPage {
+export class CorrectoPage implements OnInit {
+
+  usuario: any;
+
+  constructor(private router: Router
+  ) 
+  { 
+    const navigation = this.router.getCurrentNavigation();
+    if (navigation?.extras?.state) {
+      this.usuario = navigation.extras.state ['usuario'];
+    }
+  }
+
+  Ingreso() {
+    this.router.navigate(['/ingreso']);
+  }
+  
+
+  ngOnInit() {}
 
 
 }

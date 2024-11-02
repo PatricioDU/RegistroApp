@@ -49,5 +49,9 @@ navegarPregunta() {
   });
 }
 
+Ingreso() {
+  this.router.navigate(['/ingreso']);
+}
+
 
 }
