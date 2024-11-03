@@ -3,27 +3,30 @@
 <app-header></app-header>
 
 
-<app-welcome 
-    *ngIf="selectedComponent === 'welcome'">
-  </app-welcome>
-
-  <app-miclase 
-    *ngIf="selectedComponent === 'miclase'">
-    
-  </app-miclase>
-
-
-
-
-
 <ion-content [fullscreen]="true">
 PAGINA INICIO 
-<app-foro></app-foro>
 </ion-content>
 
 <ion-button (click)="openQrScanner()">
   Escanear Código QR
 </ion-button>
+
+
+<ion-content [fullscreen]="true">
+  
+  <app-welcome 
+    *ngIf="selectedComponent === 'welcome'">
+  </app-welcome>
+
+  <app-miclase
+    *ngIf="selectedComponent === 'miclase'">
+  </app-miclase>
+  
+  <app-foro
+    *ngIf="selectedComponent === 'foro'">
+  </app-foro>
+
+</ion-content>
 
 <app-footer>
   

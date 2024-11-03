@@ -5,7 +5,7 @@ import { Usuario } from 'src/app/model/usuario';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonFooter, IonButton, IonIcon, IonLabel } from "@ionic/angular/standalone";
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { HeaderComponent } from 'src/app/components/header/header.component';
-import { foroComponent } from 'src/app/components/foro/foro.component';
+import { ForoComponent } from 'src/app/components/foro/foro.component';
 import { MiclaseComponent } from 'src/app/components/miclase/miclase.component';
 import { CodigoqrComponent } from 'src/app/components/codigoqr/codigoqr.component';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,6 +14,8 @@ import { WelcomeComponent } from 'src/app/components/welcome/welcome.component';
 import { Capacitor } from '@capacitor/core';
 import { Clase } from 'src/app/model/clase';
 import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
+import { CommonModule } from '@angular/common';
+import { MisdatosComponent } from 'src/app/components/misdatos/misdatos.component';
 
 
 
@@ -22,7 +24,8 @@ import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
     templateUrl: './inicio.page.html',
     styleUrls: ['./inicio.page.scss'],
     standalone: true,
-    imports: [IonLabel, IonIcon, IonButton, IonFooter, IonContent, IonTitle, IonToolbar, IonHeader, FooterComponent, HeaderComponent, foroComponent,MiclaseComponent,CodigoqrComponent,WelcomeComponent]
+    imports: [IonLabel, IonIcon, IonButton, IonFooter, IonContent, IonTitle, IonToolbar, IonHeader, FooterComponent, HeaderComponent, ForoComponent,MiclaseComponent,
+      CodigoqrComponent,WelcomeComponent,CommonModule,MisdatosComponent]
 })
 export class InicioPage {
 sendClickEvent(arg0: string) {
@@ -30,9 +33,15 @@ throw new Error('Method not implemented.');
 }
     
     @ViewChild(FooterComponent) footer!: FooterComponent;
+    
     selectedComponent = 'welcome';
+    selectedcomponent : string = 'welcome';
   
-    constructor(private auth: AuthService, private scanner: ScannerService) { }
+    constructor(private AuthService: AuthService, private scanner: ScannerService) { 
+      this.AuthService.selectedComponent.subscribe((selectedComponent) => {
+        this.selectedComponent = selectedComponent;
+      })
+    }
   
     ionViewWillEnter() {
       this.changeComponent('welcome');
@@ -61,7 +70,7 @@ throw new Error('Method not implemented.');
     showusuarioComponent(qr: string) {
   
       if (Clase.isValidclaseQrCode(qr)) {
-        this.auth.qrCodeData.next(qr);
+        this.AuthService.qrCodeData.next(qr);
         this.changeComponent('codigoqr');
         return;
       }
@@ -75,7 +84,7 @@ throw new Error('Method not implemented.');
   
     changeComponent(name: string) {
       this.selectedComponent = name;
-      this.footer.selectedButton = name;
+      this.footer.selectedComponent = name;
     }
 
     async openQrScanner() {

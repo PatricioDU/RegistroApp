@@ -44,5 +44,9 @@ export class HeaderComponent {
     .play();
   }
 
+  logout() {
+    this.authService.logout();
+  }
+
 
 }

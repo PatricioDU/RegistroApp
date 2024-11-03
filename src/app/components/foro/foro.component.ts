@@ -24,7 +24,7 @@ import { Subscription } from 'rxjs';
     , IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton
     , CommonModule, FormsModule]
 })
-export class foroComponent implements OnInit, OnDestroy {
+export class ForoComponent implements OnInit, OnDestroy {
 
   post: Post = new Post();
   posts: Post[] = [];

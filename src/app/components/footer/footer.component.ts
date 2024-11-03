@@ -6,7 +6,9 @@ import { IonicModule, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
-import { logOutOutline } from 'ionicons/icons';
+import { homeOutline, logOutOutline, pawOutline, pencilOutline, qrCodeOutline } from 'ionicons/icons';
+import { ForoComponent } from '../foro/foro.component';
+import { MiclaseComponent } from '../miclase/miclase.component';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -17,13 +19,21 @@ import { logOutOutline } from 'ionicons/icons';
     , FormsModule     // CGV-Permite usar formularios
     , IonicModule     // CGV-Permite usar componentes de Ionic como IonContent, IonItem, etc.
     , TranslateModule // CGV-Permite usar pipe 'translate'
+    , ForoComponent   // CGV-Permite usar el componente foroComponent
+    , MiclaseComponent// CGV-Permite usar el componente MiclaseComponent
   ]
 })
 export class FooterComponent {
 
-  selectedButton = 'welcome';
-  constructor(private router: Router,private navctrl: NavController,private authservice: AuthService) {
-    addIcons({ logOutOutline }); }
+  selectedComponent = 'welcome';
+
+  constructor(private router: Router,private authservice: AuthService) {
+    addIcons({ logOutOutline,homeOutline, qrCodeOutline, pawOutline, pencilOutline }); }
+
+    segmentChanged(selectedComponent: string) {
+      this.selectedComponent = selectedComponent;
+      this.authservice.selectedComponent.next(this.selectedComponent);
+    }
 
   navegar(page: string) {
     this.router.navigate([page]);

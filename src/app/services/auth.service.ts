@@ -13,18 +13,13 @@ export class AuthService {
 
   keyUsuario = 'USUARIO_AUTENTICADO';
   usuarioAutenticado = new BehaviorSubject<Usuario | null>(null);
-
-  // La variable primerInicioSesion vale true cuando el usuario digita correctamente sus
-  // credenciales y logra entrar al sistema por primera vez. Pero vale falso, si el 
-  // usuario ya ha iniciado sesión, luego cierra la aplicación sin cerrar la sesión
-  // y vuelve a entrar nuevamente. Si el usuario ingresa por primera vez, se limpian todas
-  // las componentes, pero se dejan tal como están y no se limpian, si el suario
-  // cierra al aplicación y la vuelve a abrir sin haber previamente cerrado la sesión.
+  
   primerInicioSesion =  new BehaviorSubject<boolean>(false);
   qrCodeData: any;
   authUser: any;
+  selectedComponent = new BehaviorSubject<string>('welcome');
 
-  constructor(private router: Router, private bd: DataBaseService, private storage: Storage) { }
+  constructor(private router: Router, private bd: DataBaseService, private storage: Storage, ) { }
 
   async inicializarAutenticacion() {
     await this.storage.create();

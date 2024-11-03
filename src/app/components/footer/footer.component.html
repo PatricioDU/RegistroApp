@@ -1,40 +1,31 @@
 <ion-footer>
-  <ion-toolbar class="ion-padding-horizontal ion-padding-top ion-padding-bottom toolbar-inferior">
+  <ion-toolbar color="primary" style="padding-bottom: 4px">
 
-    <ion-button size="small" shape="round" 
-        (click)="navegar('/misdatos')"  >
-      <ion-icon slot="start" name="person"></ion-icon>
-      Mis Datos 
-    </ion-button>  
+    <ion-segment 
+      value="welcome" 
+      (ionChange)="segmentChanged(selectedComponent)"
+      [(ngModel)]="selectedComponent"
+    >
+      <ion-segment-button value="welcome">
+        <ion-icon name="home-outline"></ion-icon>
+        {{ "HomePage.Button.Wellcome" | translate }}
+      </ion-segment-button>
+      
+      <ion-segment-button value="miclase">
+        <ion-icon name="paw-outline"></ion-icon>
+        {{ "HomePage.Button.miclase" | translate }}
+      </ion-segment-button>
+      
+      <ion-segment-button value="foro">
+        <ion-icon name="pencil-outline"></ion-icon>
+        {{ "HomePage.Button.Forum" | translate }}
+      </ion-segment-button>
 
-    &nbsp;&nbsp;&nbsp;
-    
-    <ion-button  size="small" shape="round" 
-        (click)="navegar('/inicio')"  >
-      <ion-icon slot="start" name="home"></ion-icon>
-      Inicio
-    </ion-button>
-
-    &nbsp;&nbsp;&nbsp;
-
-    <ion-button  size="small" shape="round" 
-        (click)="navegar('/miclase')">
-      <ion-icon slot="start" name="qr-code"></ion-icon>
-      Mis Clases
-    </ion-button>
-
-    &nbsp;&nbsp;&nbsp;
-
-    <ion-button  size="small" shape="round" 
-      (click)="logout()">
-      <ion-icon slot="start" name="qr-code"></ion-icon>
-      salir
-    </ion-button>
-
-
-
+      <ion-segment-button value="misdatos">
+        <ion-icon name="paw-outline"></ion-icon>
+        {{ "HomePage.Button.misdatos" | translate }}
+      </ion-segment-button>
+    </ion-segment>
 
   </ion-toolbar>
 </ion-footer>
-
-
