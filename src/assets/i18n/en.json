@@ -1,10 +1,10 @@
 {
-    "AppName": "Angry-Dinosaurs",
+    "AppName": "Duoc Attendance System",
     "AuthorText": "Developed by:",
-    "Author": "Cristián Gómez Vega",
+    "Author": "Rodrigo Riveros Patricio Gonzalez",
     "Language": "Language",
     "Language.English": "English",
-    "Language.Spanish": "Español",
+    "Language.Spanish": "Spanish",
     "Language.Mapudungun": "Mapudungun",
     
     "Start.StartNewExperience": "Start a new experience",
@@ -17,13 +17,13 @@
     "Login.Button.Login": "Login",
     "Login.Button.Signin": "Sign Up",
     "Login.Button.ForgotPassword": "Forgot my password",
-    "Login.Button.DarkMode": "Dark Mode",
+    "Login.Button.DarkMode": "Dark",
 
-    "WelcomePage.Title.Wellcome": "Welcome to Angry-Dinosaurs!",
+    "WelcomePage.Title.Wellcome": "Welcome to Duoc Attendance System!",
 
     "HomePage.Button.Wellcome": "Home",
     "HomePage.Button.Scan": "Scan",
-    "HomePage.Button.Dinosaur": "Dinosaur",
+    "HomePage.Button.Dinosaur": "Classes",
     "HomePage.Button.Forum": "Forum",
 
     "ThemePage.Label.ColorTheme": "Color Theme:",
@@ -33,7 +33,7 @@
     "ThemePage.Color.Red": "Red",
     "ThemePage.Color.Facebook": "Facebook",
     "ThemePage.Color.Instagram": "Instagram",
-    "ThemePage.Color.Duoc": "Duoc",
+    "ThemePage.Color.Duoc": "DUOC",
     
     "ThemePage.Button.Primary": "Primary Button",
     "ThemePage.Button.Secondary": "Secondary Button",
@@ -48,8 +48,8 @@
     
     "ThemePage.Card.Title": "Card Title",
     "ThemePage.Card.Subtitle": "Card Subtitle",
-    "ThemePage.Card.Content": "This is the content of the card. You can customize the colors of the card and its content.",
-    
+    "ThemePage.Card.Content": "This is the card content. You can customize the card colors and content.",
+
     "ThemePage.List.Title": "Lists",
     "ThemePage.List.Item1": "List Item 1",
     "ThemePage.List.Item2": "List Item 2",

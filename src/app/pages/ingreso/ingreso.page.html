@@ -4,7 +4,7 @@
       <app-language #selectLanguage></app-language>
     </div>
     <div class="show-in-landscape">
-      <h1 class="glow-text"> Sistema de Asistencia DUOC </h1>
+      <h1 class="glow-text"> {{ 'AppName' | translate }} </h1>
     </div>
     <div slot="end" class="ion-margin">
       <ion-button shape="round" size="small" (click)="navigateTheme()">
@@ -26,32 +26,39 @@
 
         <ion-card-header>
           <ion-toolbar>
-            <h1>Inicio de sesión</h1>
+            <h1>  {{'AppName' | translate}}    </h1>
           </ion-toolbar>
         </ion-card-header>
 
         <ion-item>
-          <ion-input [(ngModel)]="correo" 
-              label="Cuenta" labelPlacement="floating"
-              placeholder="Ej: atorres"></ion-input>
+          <ion-input 
+            label="{{ 'Login.Label.Email' | translate }}" 
+            labelPlacement="floating"
+            [(ngModel)]="correo" 
+            placeholder="{{ 'Login.Placeholder.Email' | translate }}">
+          </ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-input [(ngModel)]="password" 
-              label="Contraseña" labelPlacement="floating" type="password"
-              placeholder="Ej: 1234"></ion-input>
+        <ion-item class="margin-bottom-6 float-right-landscape">
+          <ion-input 
+            label="{{ 'Login.Label.Password' | translate }}"
+            labelPlacement="floating"
+            [(ngModel)]="password" 
+            placeholder="{{ 'Login.Placeholder.Password' | translate }}"
+            type="password">
+          </ion-input>
         </ion-item>
 
         <div class="ion-margin-top">
           <ion-button (click)="Ingresar()">
-            Ingresar
+            {{ 'Login.Button.Login' | translate }}
           </ion-button>
         </div>    
       </ion-card-content>
     </ion-card>
   </div>
    <div class="ion-text-center">
-        <ion-button size="small" (click)="navegarcorreo()">Recuperar Contraseña</ion-button> 
+        <ion-button size="small" (click)="navegarcorreo()">{{ 'Login.Button.ForgotPassword' | translate }}</ion-button> 
     </div>
 
 </ion-content>

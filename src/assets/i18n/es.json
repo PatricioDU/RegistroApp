@@ -1,7 +1,7 @@
 {
-    "AppName": "Angry-Dinosaurs",
+    "AppName": "Sistema de asistencia Duoc",
     "AuthorText": "Desarrollado por:",
-    "Author": "Cristián Gómez Vega",
+    "Author": "rodrigo riveros patricio gonzalez",
     "Language": "Idioma",
     "Language.English": "English",
     "Language.Spanish": "Español",
@@ -19,11 +19,11 @@
     "Login.Button.ForgotPassword": "Olvidé mi contraseña",
     "Login.Button.DarkMode": "Oscuro",
 
-    "WelcomePage.Title.Wellcome": "¡Bienvenido a Angry-Dinosaurs!",
+    "WelcomePage.Title.Wellcome": "¡Bienvenido a Sistema de asistencia Duoc!",
 
     "HomePage.Button.Wellcome": "Inicio",
     "HomePage.Button.Scan": "Escanear",
-    "HomePage.Button.Dinosaur": "Dinosaurio",
+    "HomePage.Button.Dinosaur": "clases",
     "HomePage.Button.Forum": "Foro",
 
     "ThemePage.Label.ColorTheme": "Tema de color:",
