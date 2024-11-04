@@ -1,19 +1,19 @@
 <ion-header>
   <ion-toolbar class="toolbar-superior">
+    <ion-buttons slot="start">
+      <ion-button (click)="sendClickEvent('scan')" size="small" fill="clear">
+        <ion-icon name="qr-code-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
     <ion-title #titulo class="font-size-18 ion-text-center">
-      Sistema de Asistencia DUOC
+      {{ 'AppName' | translate }}
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button fill="clear" size="large" (click)="logout()">
+        <ion-icon name="log-out-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-
-  <ion-button (click)="sendClickEvent('scan')" size="small" fill="clear">
-    <ion-icon name="qr-code-outline" color="light"></ion-icon>
-  </ion-button>
-
-  <ion-button fill="clear" size="large" (click)="logout()">
-    <ion-icon name="log-out-outline" color="light"></ion-icon>
-  </ion-button>
-  
 </ion-header>
-
-<div class="spinner">
-  </div>

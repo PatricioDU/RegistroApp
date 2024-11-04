@@ -18,6 +18,7 @@
     "Login.Button.Signin": "Rakintun",
     "Login.Button.ForgotPassword": "Afeluwn ñi sekil",
     "Login.Button.DarkMode": "Kurü Düngun",
+    "login.button.route": "Rüpü",
 
     "WelcomePage.Title.Wellcome": "Tüfachi Duoc Ñamkintu Tayin mew küpan",
 
@@ -25,6 +26,7 @@
     "HomePage.Button.Scan": "Pen",
     "HomePage.Button.Dinosaur": "Kelluwün",
     "HomePage.Button.Forum": "Nütram",
+    "HomePage.Button.misdatos": "Ñi Kintual",
 
     "ThemePage.Label.ColorTheme": "Tayül Düngun:",
     "ThemePage.Color.Light": "Kallfü",
@@ -45,18 +47,18 @@
     "ThemePage.Button.Dark": "Kurü Üchinga",
     "ThemePage.Button.Home": "Ruka",
     "ThemePage.Button.Logout": "Ülka",
-
+    
     "ThemePage.Card.Title": "Weñum Ñi Epu",
     "ThemePage.Card.Subtitle": "Weñum Ñi Epul",
     "ThemePage.Card.Content": "Tüfachi weñum ñi müten mülelu. Mew küpanün ka ta tayül weñum ka fijke küpan ngün.",
-
+    
     "ThemePage.List.Title": "Weñum",
     "ThemePage.List.Item1": "Weñum Epumal Epu",
     "ThemePage.List.Item2": "Weñum Epumal Epu Epuman",
     "ThemePage.List.Item3": "Weñum Epumal Epu Küla",
-
+    
     "ThemePage.Calendar.Title": "Kintualwe",
-
+    
     "ThemePage.Form.Title": "Kintun Tayin",
     "ThemePage.Form.NameLabel": "Ñam",
     "ThemePage.Form.NamePlaceholder": "Inaymi ñam",

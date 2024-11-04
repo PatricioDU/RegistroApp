@@ -18,6 +18,7 @@
     "Login.Button.Signin": "Registrarse",
     "Login.Button.ForgotPassword": "Olvidé mi contraseña",
     "Login.Button.DarkMode": "Oscuro",
+    "login.button.route": "ruta",
 
     "WelcomePage.Title.Wellcome": "¡Bienvenido a Sistema de asistencia Duoc!",
 

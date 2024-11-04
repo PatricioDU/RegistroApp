@@ -18,6 +18,7 @@
     "Login.Button.Signin": "Sign Up",
     "Login.Button.ForgotPassword": "Forgot my password",
     "Login.Button.DarkMode": "Dark",
+    "login.button.route": "Route",
 
     "WelcomePage.Title.Wellcome": "Welcome to Duoc Attendance System!",
 
@@ -25,6 +26,7 @@
     "HomePage.Button.Scan": "Scan",
     "HomePage.Button.Dinosaur": "Classes",
     "HomePage.Button.Forum": "Forum",
+    "HomePage.Button.misdatos": "My Data",
 
     "ThemePage.Label.ColorTheme": "Color Theme:",
     "ThemePage.Color.Light": "Light",
@@ -48,8 +50,8 @@
     
     "ThemePage.Card.Title": "Card Title",
     "ThemePage.Card.Subtitle": "Card Subtitle",
-    "ThemePage.Card.Content": "This is the card content. You can customize the card colors and content.",
-
+    "ThemePage.Card.Content": "This is the content of the card. You can customize the card colors and content.",
+    
     "ThemePage.List.Title": "Lists",
     "ThemePage.List.Item1": "List Item 1",
     "ThemePage.List.Item2": "List Item 2",
