@@ -8,6 +8,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { GeolocationService } from 'src/app/services/geolocation.service';
 import * as L from 'leaflet'; // Importamos Leaflet
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +30,7 @@ export class HomePage implements OnInit {
   addressName: string = '';
   distance: string = '';
 
-  constructor(private geo: GeolocationService, private http: HttpClient) { 
+  constructor(private geo: GeolocationService, private http: HttpClient, private authService: AuthService) { 
 
   }
 
@@ -58,6 +59,9 @@ export class HomePage implements OnInit {
     }).catch((error) => {
       console.log('Error al obtener la posición geográfica');
     });
+  }
+  logout() {
+    this.authService.logout();
   }
 
   goToDUOC() {

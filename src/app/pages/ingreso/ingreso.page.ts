@@ -45,6 +45,9 @@ export class ingresoPage {
     this.authService.login(this.correo, this.password);
   }
 
+  Navegar(){
+    this.router.navigate(['/home']);
+  }
   navegarcorreo() {
     this.router.navigate(['/correo']);
   }
