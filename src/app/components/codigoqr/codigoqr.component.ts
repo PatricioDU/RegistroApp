@@ -75,10 +75,7 @@ export class CodigoqrComponent  implements OnDestroy {
     this.stopCamera();
   }
 
-  sendClickEvent(buttonName: string){
-    this.scanned.emit(buttonName);
-    
-  }
+  
 
 
   stopCamera() {

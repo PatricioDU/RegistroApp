@@ -1,8 +1,4 @@
-
-
- <app-header></app-header> 
-
-
+<app-header (headerClick)="headerClick($event)"></app-header> 
 
 <ion-button (click)="openQrScanner()">
   Escanear Código QR
@@ -11,6 +7,12 @@
 
 <ion-content [fullscreen]="true">
   
+  <app-codigoqr 
+    *ngIf="selectedComponent === 'codigoqr'"
+    (scanned)="webQrScanned($event);"
+    (stopped)="webQrStopped()">
+  </app-codigoqr>
+
   <app-welcome 
     *ngIf="selectedComponent === 'welcome'">
   </app-welcome>

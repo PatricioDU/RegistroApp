@@ -2,20 +2,21 @@ import { showAlert, showAlertError } from "../tools/message-functions";
 
 export class Clase {
 
-  static jsonDinoExample =
-    `{    "sede": "Alonso Ovalle",
+  static jsonAsistenciaExample =
+    `{    
+         "sede": "Alonso Ovalle",
          "idAsignatura": "PGY4121",
          "seccion": "001D",
          "nombreAsignatura": "Aplicaciones Móviles",
          "nombreProfesor": "Cristián Gómez Vega",
          "dia": "2022-08-09",
          "bloqueInicio": 7,
-         "horaFin": "15:15" 
+         "horaFin": "15:15",
          "bloqueTermino": 9,
-         "horaInicio": "13:00",
+         "horaInicio": "13:00"
     }`;
 
-    static jsonDinoEmpty =
+    static jsonAsistenciaEmpty =
     `{
       "sede": "",
       "idAsignatura": "",
@@ -26,7 +27,7 @@ export class Clase {
       "bloqueInicio": "",
       "horaFin": "",
       "bloqueTermino": "",
-      "horaInicio": "",
+      "horaInicio": ""
     }`;
 
     sede = '';
@@ -69,12 +70,11 @@ export class Clase {
     }
 
     static isValidclaseQrCode(qr: string) {
-    
+
       if (qr === '') return false;
   
       try {
         const json = JSON.parse(qr);
-  
         if ( json.sede       !== undefined
           && json.idAsignatura     !== undefined
           && json.seccion     !== undefined
@@ -90,7 +90,7 @@ export class Clase {
         }
       } catch(error) { }
   
-      showAlert('El código QR escaneado no corresponde a un dinosaurio');
+      showAlert('El código QR escaneado no corresponde a una asistencia');
       return false;
     }
 }  

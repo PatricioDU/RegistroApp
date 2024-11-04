@@ -14,9 +14,9 @@ export class AuthService {
   keyUsuario = 'USUARIO_AUTENTICADO';
   usuarioAutenticado = new BehaviorSubject<Usuario | null>(null);
   Asistencia = new BehaviorSubject<string>('codigoqr');
-  primerInicioSesion =  new BehaviorSubject<boolean>(false);
-  qrCodeData: any;
-  authUser: any;
+  primerInicioSesion = new BehaviorSubject<boolean>(false);
+  qrCodeData = new BehaviorSubject<string>('');
+  authUser = new Usuario();
   selectedComponent = new BehaviorSubject<string>('welcome');
 
   constructor(private router: Router, private bd: DataBaseService, private storage: Storage, ) { }

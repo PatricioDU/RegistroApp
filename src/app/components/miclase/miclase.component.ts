@@ -15,19 +15,17 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class MiclaseComponent  implements OnDestroy {
   
-  usuario = new Usuario();
+  miclase: any;
   private subscription: Subscription;
 
-
   constructor(private authService: AuthService) { 
-    this.subscription = this.authService.qrCodeData.subscribe((qr: string) => {
-      this.usuario = qr? JSON.parse(qr) : null;
-    });
+    this.subscription = this.authService.qrCodeData.subscribe((qr: any) => {
+      this.miclase = qr? JSON.parse(qr): null;
+    })
   }
   
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 
 }

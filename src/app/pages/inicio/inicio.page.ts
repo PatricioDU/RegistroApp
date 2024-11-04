@@ -33,9 +33,7 @@ throw new Error('Method not implemented.');
 }
     
     @ViewChild(FooterComponent) footer!: FooterComponent;
-    
     selectedComponent = 'welcome';
-    selectedcomponent : string = 'welcome';
   
     constructor(private AuthService: AuthService, private scanner: ScannerService) { 
       this.AuthService.selectedComponent.subscribe((selectedComponent) => {
@@ -48,15 +46,32 @@ throw new Error('Method not implemented.');
     }
   
     async headerClick(button: string) {
+
+      const jsonAsistenciaExample =
+        `{    
+            "sede": "Alonso Ovalle",
+            "idAsignatura": "PGY4121",
+            "seccion": "001D",
+            "nombreAsignatura": "Aplicaciones Móviles",
+            "nombreProfesor": "Cristián Gómez Vega",
+            "dia": "2022-08-09",
+            "bloqueInicio": 7,
+            "horaFin": "15:15",
+            "bloqueTermino": 9,
+            "horaInicio": "13:00"
+        }`;
+
+      if (button === 'testqr') {
+        this.showusuarioComponent(jsonAsistenciaExample);
+      }
   
-      if (button === 'testqr')
-        this.showusuarioComponent(Clase.jsonDinoExample);
+      else if (button === 'scan' && Capacitor.getPlatform() === 'web') {
+        this.selectedComponent = 'codigoqr';
+      }
   
-      if (button === 'scan' && Capacitor.getPlatform() === 'web')
-        this.selectedComponent = 'qrwebscanner';
-  
-      if (button === 'scan' && Capacitor.getPlatform() !== 'web')
+      else if (button === 'scan' && Capacitor.getPlatform() !== 'web') {
           this.showusuarioComponent(await this.scanner.scan());
+      }
     }
   
     webQrScanned(qr: string) {
@@ -68,10 +83,10 @@ throw new Error('Method not implemented.');
     }
   
     showusuarioComponent(qr: string) {
-  
+
       if (Clase.isValidclaseQrCode(qr)) {
         this.AuthService.qrCodeData.next(qr);
-        this.changeComponent('codigoqr');
+        this.changeComponent('miclase');
         return;
       }
       

@@ -1,53 +1,53 @@
 <ion-content>
   
-  <ion-grid fixed *ngIf="usuario" class="usuario-content">
+  <ion-grid fixed *ngIf="miclase" class="usuario-content" style="background-color:green">
     <ion-row>
       <ion-col size="5">Name</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.sede }}</ion-col>
+      <ion-col size="7">{{ miclase.sede }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Length</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.idAsignatura }}</ion-col>
+      <ion-col size="7">{{ miclase.idAsignatura }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Height</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.seccion }}</ion-col>
+      <ion-col size="7">{{ miclase.seccion }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Weight</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.nombreAsignatura }}</ion-col>
+      <ion-col size="7">{{ miclase.nombreAsignatura }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Diet</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.nombreProfesor }}</ion-col>
+      <ion-col size="7">{{ miclase.nombreProfesor }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Period</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.dia }}</ion-col>
+      <ion-col size="7">{{ miclase.dia }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Extinction</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.dia }}</ion-col>
+      <ion-col size="7">{{ miclase.dia }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Found</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.bloqueInicio }}</ion-col>
+      <ion-col size="7">{{ miclase.bloqueInicio }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Found</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.bloqueTermino }}</ion-col>
+      <ion-col size="7">{{ miclase.bloqueTermino }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Found</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.horaInicio }}</ion-col>
+      <ion-col size="7">{{ miclase.horaInicio }}</ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="5">Found</ion-col>
-      <ion-col size="7">{{ usuario.asistencia.horaFin }}</ion-col>
+      <ion-col size="7">{{ miclase.horaFin }}</ion-col>
     </ion-row>
   </ion-grid>
 
-  <div *ngIf="!usuario" class="center-frame">
+  <div *ngIf="!miclase" class="center-frame">
     <div class="picture-frame ion-text-center">
       <img class="you-must-scan" src="/assets/images/you-must-scan.png">
     </div>
