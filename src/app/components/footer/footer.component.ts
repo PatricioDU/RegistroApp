@@ -6,7 +6,7 @@ import { IonicModule, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
 import { AuthService } from 'src/app/services/auth.service';
-import { homeOutline, logOutOutline, pawOutline, pencilOutline, qrCodeOutline } from 'ionicons/icons';
+import { homeOutline, logOutOutline, pawOutline, pencilOutline, personCircleOutline, qrCodeOutline, schoolOutline } from 'ionicons/icons';
 import { ForoComponent } from '../foro/foro.component';
 import { MiclaseComponent } from '../miclase/miclase.component';
 @Component({
@@ -28,7 +28,7 @@ export class FooterComponent {
   selectedComponent = 'welcome';
 
   constructor(private router: Router,private authservice: AuthService) {
-    addIcons({ logOutOutline,homeOutline, qrCodeOutline, pawOutline, pencilOutline }); }
+    addIcons({ logOutOutline,homeOutline, qrCodeOutline, pawOutline, pencilOutline,personCircleOutline, schoolOutline }); }
 
     segmentChanged(selectedComponent: string) {
       this.selectedComponent = selectedComponent;
