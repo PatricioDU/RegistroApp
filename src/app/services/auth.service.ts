@@ -13,7 +13,7 @@ export class AuthService {
 
   keyUsuario = 'USUARIO_AUTENTICADO';
   usuarioAutenticado = new BehaviorSubject<Usuario | null>(null);
-  
+  Asistencia = new BehaviorSubject<string>('codigoqr');
   primerInicioSesion =  new BehaviorSubject<boolean>(false);
   qrCodeData: any;
   authUser: any;
@@ -60,7 +60,7 @@ export class AuthService {
       if (usuarioAutenticado) {
         this.usuarioAutenticado.next(usuarioAutenticado);
         this.primerInicioSesion.next(false); // Avisar que no es el primer inicio de sesión
-        this.router.navigate(['/home']);
+        this.router.navigate(['/inicio']);
       } else {
         await this.bd.buscarUsuarioValido(cuenta, password).then(async (usuario: Usuario | undefined) => {
           if (usuario) {
@@ -70,7 +70,7 @@ export class AuthService {
             this.router.navigate(['/inicio']);
           } else {
             showToast(`El correo o la password son incorrectos`);
-            this.router.navigate(['/login']);
+            this.router.navigate(['/ingreso']);
           }
         });
       }
@@ -89,7 +89,7 @@ export class AuthService {
           this.router.navigate(['/pregunta']);
         } else {
           showToast(`El correo proporcionado no está registrado.`);
-          this.router.navigate(['/login']);
+          this.router.navigate(['/ingreso']);
         }
       }
     });

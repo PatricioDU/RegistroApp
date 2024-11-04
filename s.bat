@@ -299,7 +299,7 @@ call :ver "[14] Ejecutar JSON-SERVER usando una IP"
 set host=""
 set /p host="Introduce la direccion IP de tu equipo (default: 192.168.100.34): "
 if %host%=="" set "host=192.168.100.34"
-call json-server --host=%host% --watch .\_JSON-SERVER\publicaciones.json
+call json-server --host=%host% --watch .\_JSON-SERVER\posts.json
 exit /b
 
 
