@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonCard } from '@ionic/angular/standalone';
 import { Subscription } from 'rxjs';
 import { Usuario } from 'src/app/model/usuario';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './miclase.component.html',
   styleUrls: ['./miclase.component.scss'],
   standalone: true,
-  imports: [IonContent, IonGrid, IonRow, IonCol, CommonModule, FormsModule]
+  imports: [IonCard, IonContent, IonGrid, IonRow, IonCol, CommonModule, FormsModule]
 })
 export class MiclaseComponent  implements OnDestroy {
   

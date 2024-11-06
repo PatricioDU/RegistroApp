@@ -1,48 +1,43 @@
 <ion-content>
-  
-  <ion-grid fixed *ngIf="miclase" class="usuario-content" style="background-color:green">
-    <ion-row>
-      <ion-col size="5">Name</ion-col>
+  <ion-grid fixed *ngIf="miclase" class="usuario-content" style="color: white;">
+    <ion-row class="small-margin">
+      <ion-col size="4">Sede</ion-col>
       <ion-col size="7">{{ miclase.sede }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Length</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Código Asignatura</ion-col>
       <ion-col size="7">{{ miclase.idAsignatura }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Height</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Sección</ion-col>
       <ion-col size="7">{{ miclase.seccion }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Weight</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Nombre Asignatura</ion-col>
       <ion-col size="7">{{ miclase.nombreAsignatura }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Diet</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Nombre Docente</ion-col>
       <ion-col size="7">{{ miclase.nombreProfesor }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Period</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Día</ion-col>
       <ion-col size="7">{{ miclase.dia }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Extinction</ion-col>
-      <ion-col size="7">{{ miclase.dia }}</ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="5">Found</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Bloque Inicio</ion-col>
       <ion-col size="7">{{ miclase.bloqueInicio }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Found</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Bloque Término</ion-col>
       <ion-col size="7">{{ miclase.bloqueTermino }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Found</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Hora Inicio</ion-col>
       <ion-col size="7">{{ miclase.horaInicio }}</ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="5">Found</ion-col>
+    <ion-row class="small-margin">
+      <ion-col size="4">Hora Fin</ion-col>
       <ion-col size="7">{{ miclase.horaFin }}</ion-col>
     </ion-row>
   </ion-grid>
@@ -52,5 +47,5 @@
       <img class="you-must-scan" src="/assets/images/you-must-scan.png">
     </div>
   </div>
-
 </ion-content>
+
