@@ -1,10 +1,10 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar class="toolbar-superior">
     <div slot="start" class="ion-margin">
       <app-language #selectLanguage></app-language>
     </div>
     <div class="show-in-landscape">
-      <h1 class="glow-text"> {{ 'AppName' | translate }} </h1>
+      <h1 class="glow-text">{{ 'AppName' | translate }}</h1>
     </div>
     <div slot="end" class="ion-margin">
       <ion-button shape="round" size="small" (click)="navigateTheme()">
@@ -12,40 +12,43 @@
         <ion-icon slot="start" name="color-wand-outline"></ion-icon>
       </ion-button>
     </div>
-   </ion-toolbar>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div class="centrar" class="enmarcar">
-
+<ion-content [fullscreen]="true" resize="none">
+  <div class="centrar">
     <ion-card class="ion-text-center">
-      
-      <img alt="DUOC" src="../../../assets/images/sede_padre_alonso.jpg" class="foto-portada" />
-    
-      <ion-card-content>
+      <img
+        alt="DUOC"
+        src="../../../assets/images/sede_padre_alonso.jpg"
+        class="foto-portada"
+      />
 
+      <ion-card-content>
         <ion-card-header>
           <ion-toolbar>
-            <h1>  {{'AppName' | translate}}    </h1>
+            <h1>{{'AppName' | translate}}</h1>
           </ion-toolbar>
         </ion-card-header>
 
         <ion-item>
-          <ion-input 
-            label="{{ 'Login.Label.Email' | translate }}" 
+          <ion-input
+            label="{{ 'Login.Label.Email' | translate }}"
             labelPlacement="floating"
-            [(ngModel)]="correo" 
-            placeholder="{{ 'Login.Placeholder.Email' | translate }}">
+            [(ngModel)]="correo"
+            placeholder="{{ 'Login.Placeholder.Email' | translate }}"
+          >
           </ion-input>
         </ion-item>
 
-        <ion-item class="margin-bottom-6 float-right-landscape">
-          <ion-input 
+        <ion-item class="margin-bottom-6">
+          <ion-input
             label="{{ 'Login.Label.Password' | translate }}"
             labelPlacement="floating"
-            [(ngModel)]="password" 
+            [(ngModel)]="password"
             placeholder="{{ 'Login.Placeholder.Password' | translate }}"
-            type="password">
+            type="password"
+          >
           </ion-input>
         </ion-item>
 
@@ -53,15 +56,19 @@
           <ion-button (click)="Ingresar()">
             {{ 'Login.Button.Login' | translate }}
           </ion-button>
-        </div>    
+        </div>
+
+        <div class="ion-text-center">
+          <ion-button size="small" (click)="navegarcorreo()"
+            >{{ 'Login.Button.ForgotPassword' | translate }}</ion-button
+          >
+        </div>
+        <div class="ion-text-center">
+          <ion-button size="small" class="boton-largo" (click)="Navegar()"
+            >{{'login.button.route' | translate}}</ion-button
+          >
+        </div>
       </ion-card-content>
     </ion-card>
   </div>
-   <div class="ion-text-center">
-        <ion-button size="small" (click)="navegarcorreo()">{{ 'Login.Button.ForgotPassword' | translate }}</ion-button> 
-    </div>
-    <div class="ion-text-center">
-      <ion-button size="small" class="boton-largo" (click)="Navegar()">{{'login.button.route' | translate}}</ion-button> 
-  </div>
-
 </ion-content>
