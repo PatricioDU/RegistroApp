@@ -27,6 +27,7 @@
     "HomePage.Button.Dinosaur": "Classes",
     "HomePage.Button.Forum": "Forum",
     "HomePage.Button.misdatos": "My Data",
+    "HomePage.Button.usuarios": "UwUsers",
 
     "ThemePage.Label.ColorTheme": "Color Theme:",
     "ThemePage.Color.Light": "Light",
