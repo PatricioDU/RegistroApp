@@ -1,80 +1,53 @@
-<ion-header translucent>
-  <ion-toolbar class="toolbar-superior">
-    <div slot="start" class="ion-margin">
-      <app-language #selectLanguage></app-language>
+<ion-content [fullscreen]="true" class="no-scroll">
+  <div class="page-container">
+    <div class="centrar">
+      <ion-card class="ion-text-center">
+        <img
+          alt="DUOC"
+          src="../../../assets/images/sede_padre_alonso.jpg"
+          class="foto-portada"
+        />
+        <ion-card-content>
+          <ion-card-header>
+            <ion-toolbar>
+              <h1>{{'AppName' | translate}}</h1>
+            </ion-toolbar>
+          </ion-card-header>
+          <ion-item>
+            <ion-input
+              label="{{ 'Login.Label.Email' | translate }}"
+              labelPlacement="floating"
+              [(ngModel)]="correo"
+              placeholder="{{ 'Login.Placeholder.Email' | translate }}"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item class="margin-bottom-6">
+            <ion-input
+              label="{{ 'Login.Label.Password' | translate }}"
+              labelPlacement="floating"
+              [(ngModel)]="password"
+              placeholder="{{ 'Login.Placeholder.Password' | translate }}"
+              type="password"
+            >
+            </ion-input>
+          </ion-item>
+          <div class="ion-margin-top">
+            <ion-button (click)="Ingresar()">
+              {{ 'Login.Button.Login' | translate }}
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
     </div>
-    <div class="show-in-landscape">
-      <h1 class="glow-text">{{ 'AppName' | translate }}</h1>
+    <div class="ion-text-center">
+      <a href="/correo">{{ 'Login.Button.ForgotPassword' | translate }}</a>
     </div>
-    <div slot="end" class="ion-margin">
-      <ion-button shape="round" size="small" (click)="navigateTheme()">
-        Tema
-        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
-      </ion-button>
+    <div class="ion-text-center">
+      <a href="/home">{{ 'login.button.route' | translate }}</a>
     </div>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" resize="none" keyboard-attach>
-  <div class="centrar">
-    <ion-card class="ion-text-center">
-      <img
-        alt="DUOC"
-        src="../../../assets/images/sede_padre_alonso.jpg"
-        class="foto-portada"
-      />
-
-      <ion-card-content>
-        <ion-card-header>
-          <ion-toolbar>
-            <h1>{{'AppName' | translate}}</h1>
-          </ion-toolbar>
-        </ion-card-header>
-
-        <ion-item>
-          <ion-input
-            label="{{ 'Login.Label.Email' | translate }}"
-            labelPlacement="floating"
-            [(ngModel)]="correo"
-            placeholder="{{ 'Login.Placeholder.Email' | translate }}"
-          >
-          </ion-input>
-        </ion-item>
-
-        <ion-item class="margin-bottom-6">
-          <ion-input
-            label="{{ 'Login.Label.Password' | translate }}"
-            labelPlacement="floating"
-            [(ngModel)]="password"
-            placeholder="{{ 'Login.Placeholder.Password' | translate }}"
-            type="password"
-          >
-          </ion-input>
-        </ion-item>
-
-        <div class="ion-margin-top">
-          <ion-button (click)="Ingresar()">
-            {{ 'Login.Button.Login' | translate }}
-          </ion-button>
-        </div>
-
-        <div class="ion-text-center">
-          <ion-button size="small" (click)="navegarcorreo()"
-            >{{ 'Login.Button.ForgotPassword' | translate }}</ion-button
-          >
-        </div>
-        <div class="ion-text-center">
-          <ion-button size="small" class="boton-largo" (click)="Navegar()"
-            >{{'login.button.route' | translate}}</ion-button
-          >
-        </div>
-        
-        <div class="ion-margin-top">
-          <ion-button (click)="navegarRegistrar()">
-            {{ 'Login.Button.Login' | translate }}
-          </ion-button>
-        </div>
-      </ion-card-content>
-    </ion-card>
+    <div class="ion-text-center">
+      <a href="/registrarme">{{ 'Login.Button.Login' | translate }}</a>
+    </div>
   </div>
 </ion-content>
