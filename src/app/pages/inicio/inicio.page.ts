@@ -16,6 +16,7 @@ import { Clase } from 'src/app/model/clase';
 import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { CommonModule } from '@angular/common';
 import { MisdatosComponent } from 'src/app/components/misdatos/misdatos.component';
+import { UsuariosComponent } from 'src/app/components/usuarios/usuarios.component';
 
 
 
@@ -25,7 +26,7 @@ import { MisdatosComponent } from 'src/app/components/misdatos/misdatos.componen
     styleUrls: ['./inicio.page.scss'],
     standalone: true,
     imports: [IonLabel, IonIcon, IonButton, IonFooter, IonContent, IonTitle, IonToolbar, IonHeader, FooterComponent, HeaderComponent, ForoComponent,MiclaseComponent,
-      CodigoqrComponent,WelcomeComponent,CommonModule,MisdatosComponent]
+      CodigoqrComponent,WelcomeComponent,CommonModule,MisdatosComponent,UsuariosComponent]
 })
 export class InicioPage {
 sendClickEvent(arg0: string) {
