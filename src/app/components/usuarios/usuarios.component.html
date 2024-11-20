@@ -1,3 +1,16 @@
-<p>
-  usuarios works!
-</p>
+<div *ngIf="usuarios.length > 0; else noUsuarios">
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-label>
+        <h2>{{ usuario.cuenta }}</h2>
+        <p>{{ usuario.correo }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="eliminarUsuario(usuario.cuenta)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</div>
+<ng-template #noUsuarios>
+  <p>No hay usuarios registrados.</p>
+</ng-template>

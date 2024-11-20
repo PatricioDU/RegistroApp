@@ -1,16 +1,18 @@
+import { DataBaseService } from 'src/app/services/data-base.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { showToast } from 'src/app/tools/message-routines';
 import { Usuario } from '../model/usuario';
 import { Storage } from '@ionic/storage-angular';
-import { DataBaseService } from './data-base.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  usuarioActual: BehaviorSubject<Usuario | null> = new BehaviorSubject<Usuario | null>(null);
+  private currentUser: any;
   keyUsuario = 'USUARIO_AUTENTICADO';
   usuarioAutenticado = new BehaviorSubject<Usuario | null>(null);
   Asistencia = new BehaviorSubject<string>('codigoqr');
@@ -19,10 +21,45 @@ export class AuthService {
   authUser = new Usuario();
   selectedComponent = new BehaviorSubject<string>('welcome');
 
-  constructor(private router: Router, private bd: DataBaseService, private storage: Storage, ) { }
+  constructor(private router: Router, private databaseService: DataBaseService, private storage: Storage, ) {
+    this.currentUser = {
+      role: 'admin', // Cambia esto según tu lógica real
+      name: 'Admin User'
+    };
+   }
+   isAdmin(): boolean {
+    return this.currentUser?.role === 'admin';
+  }
+
+  private usuarios: Usuario[] =[];
+
+  getUsers(): Usuario[] {
+    return this.usuarios;
+  }
+
+  deleteUser(cuenta: string): void {
+    this.usuarios = this.usuarios.filter(usuario => usuario.cuenta !== cuenta);
+  }
 
   async inicializarAutenticacion() {
     await this.storage.create();
+  }
+
+  async iniciarSesion(cuenta: string, password: string): Promise<void> {
+    try {
+      // Llama al método del servicio de base de datos para buscar el usuario
+      const usuario = await this.databaseService.buscarUsuarioValido(cuenta, password);
+
+      if (usuario) {
+        // Si el usuario existe, establece el usuario actual
+        this.usuarioActual.next(usuario);
+      } else {
+        throw new Error('Credenciales inválidas');
+      }
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+      throw error;
+    }
   }
 
   async isAuthenticated(): Promise<boolean> {
@@ -62,7 +99,7 @@ export class AuthService {
         this.primerInicioSesion.next(false); // Avisar que no es el primer inicio de sesión
         this.router.navigate(['/inicio']);
       } else {
-        await this.bd.buscarUsuarioValido(cuenta, password).then(async (usuario: Usuario | undefined) => {
+        await this.databaseService.buscarUsuarioValido(cuenta, password).then(async (usuario: Usuario | undefined) => {
           if (usuario) {
             showToast(`¡Bienvenido(a) ${usuario.nombre} ${usuario.apellido}!`);
             this.guardarUsuarioAutenticado(usuario);
@@ -82,7 +119,7 @@ export class AuthService {
         this.usuarioAutenticado.next(usuarioAutenticado);
         this.router.navigate(['/pregunta']);
       } else {
-        const usuario = await this.bd.buscarUsuarioPorCorreo(correo);
+        const usuario = await this.databaseService.buscarUsuarioPorCorreo(correo);
         if (usuario) {
           this.guardarUsuarioAutenticado(usuario);
           showToast(`¡Bienvenido(a) ${usuario.nombre} ${usuario.apellido}!`);

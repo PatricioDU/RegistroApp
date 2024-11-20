@@ -5,11 +5,12 @@ import { Usuario } from '../model/usuario';
 import { BehaviorSubject } from 'rxjs';
 import { NivelEducacional } from '../model/nivel-educacional';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataBaseService {
-
+  usuarioActual: BehaviorSubject<Usuario | null> = new BehaviorSubject<Usuario | null>(null);
   userUpgrades = [
     {
       toVersion: 1,
@@ -199,7 +200,25 @@ export class DataBaseService {
       'SELECT * FROM USUARIO WHERE cuenta=? AND password=?;',
       [cuenta, password])).values as Usuario[];
     return usuarios[0];
+
+    
   }
+
+  
+
+  async iniciarSesion(correo: string, password: string): Promise<void> {
+    const usuario = await this.buscarUsuarioValido(correo, password);
+    if (usuario) {
+      this.usuarioActual.next(usuario); // Establecer el usuario actual
+    } else {
+      throw new Error('Credenciales incorrectas');
+    }
+  }
+
+   cerrarSesion(): void {
+    this.usuarioActual.next(null); // Limpiar el usuario actual
+  }
+
 
 
   // Validar usuario

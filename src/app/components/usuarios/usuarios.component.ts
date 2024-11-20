@@ -30,9 +30,39 @@ import { MatNativeDateModule } from '@angular/material/core';
 })
 
 export class UsuariosComponent  implements OnInit {
+  usuarios: Usuario[] = [];
+  loading: boolean = true;
+  constructor(private databaseService: DataBaseService) {}
 
-  constructor() { }
+  ngOnInit(): void {
+    this.cargarUsuarios();
+  }
+  
 
-  ngOnInit() {}
+  async cargarUsuarios(): Promise<void> {
+    try {
+      await this.databaseService.leerUsuarios();
+      this.databaseService.listaUsuarios.subscribe((usuarios) => {
+        this.usuarios = usuarios;
+        this.loading = false;
+      });
+    } catch (error) {
+      console.error('Error al cargar usuarios:', error);
+      this.loading = false;
+    }
+  }
+
+  // Eliminar un usuario usando su cuenta
+  async eliminarUsuario(cuenta: string): Promise<void> {
+    if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
+      try {
+        await this.databaseService.eliminarUsuarioUsandoCuenta(cuenta);
+        alert('Usuario eliminado con éxito');
+      } catch (error) {
+        console.error('Error al eliminar usuario:', error);
+        alert('Hubo un error al intentar eliminar el usuario.');
+      }
+    }
+  }
 
 }

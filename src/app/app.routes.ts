@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { ingresoGuard } from './guards/ingreso-guard.service';
 import { inicioGuard } from './guards/inicio-guard.service';
 
+
 export const routes: Routes = [
   {
     path: '',
