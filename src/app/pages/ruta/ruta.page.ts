@@ -11,9 +11,9 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+  selector: 'app-ruta',
+  templateUrl: './ruta.page.html',
+  styleUrls: ['./ruta.page.scss'],
   standalone: true,
   imports: [
       CommonModule    // CGV-Permite usar directivas comunes de Angular
@@ -24,7 +24,7 @@ import { AuthService } from 'src/app/services/auth.service';
     , FooterComponent // CGV-Permite usar el componente Footer
   ]
 })
-export class HomePage implements OnInit {
+export class RutaPage implements OnInit {
 
   map: L.Map | null = null;
   addressName: string = '';
