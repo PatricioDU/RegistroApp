@@ -14,8 +14,8 @@ export const routes: Routes = [
     canActivate: [ingresoGuard]
   },
   {
-    path: 'home',
-    loadComponent: () => import('./pages/home/home.page').then( m => m.HomePage),
+    path: 'ruta',
+    loadComponent: () => import('./pages/ruta/ruta.page').then(m => m.RutaPage),
   },
   {
     path: 'theme',
