@@ -13,6 +13,7 @@ export class Usuario extends Persona {
   public cuenta: string;
   public correo: string;
   public password: string;
+  public confirmarPassword: string;
   public preguntaSecreta: string;
   public respuestaSecreta: string;
   public asistencia: Asistencia;
@@ -23,6 +24,7 @@ export class Usuario extends Persona {
     this.cuenta = '';
     this.correo = '';
     this.password = '';
+    this.confirmarPassword = '';
     this.preguntaSecreta = '';
     this.respuestaSecreta = '';
     this.nombre = '';
@@ -53,6 +55,7 @@ export class Usuario extends Persona {
     cuenta: string,
     correo: string,
     password: string,
+    confirmarPassword: string,
     preguntaSecreta: string,
     respuestaSecreta: string,
     nombre: string,
@@ -65,6 +68,7 @@ export class Usuario extends Persona {
     usuario.cuenta = cuenta;
     usuario.correo = correo;
     usuario.password = password;
+    usuario.confirmarPassword = confirmarPassword;
     usuario.preguntaSecreta = preguntaSecreta;
     usuario.respuestaSecreta = respuestaSecreta;
     usuario.nombre = nombre;
@@ -96,6 +100,7 @@ export class Usuario extends Persona {
       ${this.cuenta}
       ${this.correo}
       ${this.password}
+      ${this.confirmarPassword}
       ${this.preguntaSecreta}
       ${this.respuestaSecreta}
       ${this.nombre}

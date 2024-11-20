@@ -63,6 +63,7 @@ export class DataBaseService {
     await this.guardarUsuario(Usuario.getNewUsuario(
       'atorres', 
       'atorres@duocuc.cl', 
+      '1234',
       '1234', 
       '¿Cuál es tu animal favorito?', 
       'gato',
@@ -74,6 +75,7 @@ export class DataBaseService {
     await this.guardarUsuario(Usuario.getNewUsuario(
       'jperez', 
       'jperez@duocuc.cl', 
+      '5678',
       '5678', 
       '¿Cuál es tu postre favorito?',
       'panqueques',
@@ -85,6 +87,7 @@ export class DataBaseService {
     await this.guardarUsuario(Usuario.getNewUsuario(
       'cmujica', 
       'cmujica@duocuc.cl', 
+      '0987',
       '0987', 
       '¿Cuál es tu vehículo favorito?',
       'moto',
@@ -126,6 +129,7 @@ export class DataBaseService {
       usu.cuenta = row['cuenta'];
       usu.correo = row['correo'];
       usu.password = row['password'];
+      usu.confirmarPassword = row['confirmarpassword'];
       usu.preguntaSecreta = row['preguntaSecreta'];
       usu.respuestaSecreta = row['respuestaSecreta'];
       usu.nombre = row['nombre'];
@@ -154,6 +158,7 @@ export class DataBaseService {
         usu.cuenta = row['cuenta'];
         usu.correo = row['correo'];
         usu.password = row['password'];
+        usu.confirmarPassword = row['confirmarpassword'];
         usu.preguntaSecreta = row['preguntaSecreta'];
         usu.respuestaSecreta = row['respuestaSecreta'];
         usu.nombre = row['nombre'];

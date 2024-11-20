@@ -55,6 +55,9 @@ export class ingresoPage {
   navigateTheme() {
     this.router.navigate(['/theme']);
   }
+  navegarRegistrar() {
+    this.router.navigate(['/registrarme'])
+  }
 
   async ionViewWillEnter() {
     this.selectLanguage.setCurrentLanguage();
