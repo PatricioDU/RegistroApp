@@ -18,7 +18,7 @@ export class APIClientService {
   };
 
    apiUrl = 'http://localhost:3000';
-  //  apiUrl = 'http://192.168.54.179:3000';
+  //  apiUrl = 'http://192.168.64.158';
   postList: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>([]);
 
   constructor(private http: HttpClient) { }

@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'angrydinosaur',
+  appId: 'cl.duoc.asistenciaduoc',
+  appName: 'Asistencia DUOC',
   webDir: 'www',
   plugins: {
     SplashScreen: {
