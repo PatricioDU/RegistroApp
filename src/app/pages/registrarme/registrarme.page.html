@@ -16,44 +16,40 @@
       </ion-toolbar>
       
       <ion-item #itemCuenta>
-        <ion-label class="font-size-16">Cuenta</ion-label>
-        <ion-input [(ngModel)]="usuario.cuenta" placeholder="Ingrese su cuenta"></ion-input>
+        <ion-label class="font-size-16">{{ 'account' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.cuenta" placeholder="{{ 'enter_account' | translate }}"></ion-input>
       </ion-item>
-
+      
       <ion-item #itemNombre>
-        <ion-label class="font-size-16">Nombre</ion-label>
-        <ion-input [(ngModel)]="usuario.nombre" placeholder="Ingrese su nombre"></ion-input>
+        <ion-label class="font-size-16">{{ 'name' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.nombre" placeholder="{{ 'enter_name' | translate }}"></ion-input>
       </ion-item>
-
+      
       <ion-item #itemApellido>
-        <ion-label class="font-size-16">Apellido</ion-label>
-        <ion-input [(ngModel)]="usuario.apellido" placeholder="Ingrese su apellido"></ion-input>
+        <ion-label class="font-size-16">{{ 'surname' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.apellido" placeholder="{{ 'enter_surname' | translate }}"></ion-input>
       </ion-item>
-
+      
       <ion-item #ItemNivelEducacional>
-        <ion-label class="font-size-16">Nivel Educacional</ion-label>
+        <ion-label class="font-size-16">{{ 'educational_level' | translate }}</ion-label>
         <ion-select [(ngModel)]="usuario.nivelEducacional" interface="popover">
           <ion-select-option *ngFor="let nivel of nivelesEducacionales" [value]="nivel">
             {{ nivel.nombre }}
           </ion-select-option>
         </ion-select>
       </ion-item>
-
       
-
       <ion-item #itemFechaNacimiento>
         <table>
           <tr>
-            <td class="font-size-12">
-              Nacimiento
-            </td>
+            <td class="font-size-12">{{ 'birthdate' | translate }}</td>
             <td class="cell-align-right">
               <input 
                 matInput 
                 [matDatepicker]="fechaNacimiento" 
                 [(ngModel)]="usuario.fechaNacimiento"
                 [ngModelOptions]="{standalone: true}" 
-                placeholder="dd/mm/yyyy"
+                placeholder="{{ 'dd_mm_yyyy' | translate }}"
                 class="date-width">
             </td>
             <td class="cell-width-0">
@@ -63,51 +59,43 @@
           </tr>
         </table>
       </ion-item>
+      
       <ion-item>
-        <ion-label class="font-size-16">Direccion</ion-label>
-        <ion-input [(ngModel)]="usuario.direccion" placeholder="Ingrese su direccion"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label class="font-size-16">Preguntasecreta</ion-label>
-        <ion-input [(ngModel)]="usuario.preguntaSecreta" placeholder="Ingrese su pregunta secreta"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label class="font-size-16">Respuestasecreta</ion-label>
-        <ion-input [(ngModel)]="usuario.respuestaSecreta" placeholder="Respuesta"></ion-input>
+        <ion-label class="font-size-16">{{ 'address' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.direccion" placeholder="{{ 'enter_address' | translate }}"></ion-input>
       </ion-item>
       
-
+      <ion-item>
+        <ion-label class="font-size-16">{{ 'secret_question' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.preguntaSecreta" placeholder="{{ 'enter_secret_question' | translate }}"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label class="font-size-16">{{ 'secret_answer' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.respuestaSecreta" placeholder="{{ 'enter_secret_answer' | translate }}"></ion-input>
+      </ion-item>
       
       <ion-item #itemCorreo>
-        <ion-label class="font-size-16">Correo Institucional</ion-label>
-        <ion-input [(ngModel)]="usuario.correo" placeholder="Ingrese su correo"></ion-input>
+        <ion-label class="font-size-16">{{ 'institutional_email' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.correo" placeholder="{{ 'enter_email' | translate }}"></ion-input>
       </ion-item>
-
+      
       <ion-item #itemContraseña>
-        <ion-label class="font-size-16">Contraseña</ion-label>
-        <ion-input [(ngModel)]="usuario.password" placeholder="Ingrese su contraseña"></ion-input>
+        <ion-label class="font-size-16">{{ 'password' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.password" placeholder="{{ 'enter_password' | translate }}"></ion-input>
       </ion-item>
-
+      
       <ion-item #itemConfirmarContraseña>
-        <ion-label class="font-size-16">Confirmar Contraseña</ion-label>
-        <ion-input [(ngModel)]="usuario.confirmarPassword" placeholder="Confirme su contraseña"></ion-input>
+        <ion-label class="font-size-16">{{ 'confirm_password' | translate }}</ion-label>
+        <ion-input [(ngModel)]="usuario.confirmarPassword" placeholder="{{ 'confirm_password' | translate }}"></ion-input>
       </ion-item>
-
+      
       <ion-toolbar>
         <ion-button expand="full" shape="round" (click)="actualizarperfil()">
-          <!-- <ion-icon slot="start" name="refresh"></ion-icon> -->
-          Crear Cuenta
+          {{ 'create_account' | translate }}
         </ion-button>
         <ion-button expand="full" shape="round" (click)="navegarIngresar()">
-          <!-- <ion-icon slot="start" name="refresh"></ion-icon> -->
-          Volver al inicio
+          {{ 'go_back_home' | translate }}
         </ion-button>
-
       </ion-toolbar>
       
-
-
-      
-    </ion-content>
-  </div>
-</div> 

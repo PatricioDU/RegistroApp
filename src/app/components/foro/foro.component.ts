@@ -12,6 +12,7 @@ import { Post } from 'src/app/model/post';
 import { showToast } from 'src/app/tools/message-functions';
 import { addIcons } from 'ionicons';
 import { Subscription } from 'rxjs';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-foro',
@@ -22,7 +23,7 @@ import { Subscription } from 'rxjs';
     , IonCardHeader, IonCardTitle, IonCardSubtitle, IonItem
     , IonLabel, IonInput, IonTextarea, IonGrid, IonRow, IonCol
     , IonButton, IonIcon, IonContent, IonCardContent, IonFab, IonFabButton
-    , CommonModule, FormsModule]
+    , CommonModule, FormsModule, TranslateModule ]
 })
 export class ForoComponent implements OnInit, OnDestroy {
 

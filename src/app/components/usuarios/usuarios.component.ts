@@ -11,6 +11,7 @@ import { AnimationController} from '@ionic/angular';
 import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, IonLabel } from "@ionic/angular/standalone";
 import { MatNativeDateModule } from '@angular/material/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -26,6 +27,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule, 
     IonHeader, 
     IonTitle,
+    TranslateModule
   ],
 })
 

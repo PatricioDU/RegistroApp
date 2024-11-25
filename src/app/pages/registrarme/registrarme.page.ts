@@ -12,6 +12,7 @@ import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonInput, IonLabel } from "@ionic/angular/standalone";
 import { MatNativeDateModule } from '@angular/material/core';
 import { Router } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-registrarme',
@@ -26,6 +27,7 @@ import { Router } from '@angular/router';
     MatNativeDateModule, 
     IonHeader, 
     IonTitle,
+    TranslateModule
   ],
 })
 export class RegistrarmePage implements OnInit {

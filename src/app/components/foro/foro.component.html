@@ -3,25 +3,25 @@
   <!-- Formulario para crear/editar publicaciones -->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Gestión de Publicaciones</ion-card-title>
+      <ion-card-title>{{'title.foro' | translate }}</ion-card-title>
       <ion-card-subtitle>{{ selectedPostText }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
       <ion-item>
-        <ion-label position="floating" color="secondary">Título</ion-label>
+        <ion-label position="floating" color="secondary">{{'title.mini' | translate }}</ion-label>
         <ion-input [(ngModel)]="post.title" placeholder="Ingresa el título de la publicación"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating" color="secondary">Descripción</ion-label>
+        <ion-label position="floating" color="secondary">{{'descripcion.mini' | translate }}</ion-label>
         <ion-textarea [(ngModel)]="post.body" placeholder="Escribe el contenido de la publicación"></ion-textarea>
       </ion-item>
 
       <div class="ion-text-center margin-top-6">
-        <ion-button color="medium" shape="round" (click)="cleanPost()">Limpiar</ion-button>
+        <ion-button color="medium" shape="round" (click)="cleanPost()">{{'limpiar.mini' | translate }}</ion-button>
         <ion-button color="primary" shape="round" (click)="savePost()">
-          {{ post.id ? 'Actualizar' : 'Guardar' }}
+          {{ post.id ? 'Actualizar' : 'Guardar.mini' | translate }}
         </ion-button>
       </div>
     </ion-card-content>
@@ -29,7 +29,7 @@
 
   <!-- Lista de publicaciones recientes -->
   <ion-card class="sin-bordes">
-    <ion-card-title class="con-padding-top">Publicaciones Recientes</ion-card-title>
+    <ion-card-title class="con-padding-top">{{'publicacion.foro' | translate }}</ion-card-title>
   </ion-card>
 
   <ion-list>
