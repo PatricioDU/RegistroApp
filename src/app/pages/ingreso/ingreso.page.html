@@ -1,3 +1,19 @@
+<ion-header>
+  <ion-toolbar class="transparent-bg">
+    <div slot="start" class="ion-margin">
+      <app-language #language></app-language>
+    </div>
+    <div class="show-in-landscape">
+      <h1 class="glow-text"> {{ 'AppName' | translate }} </h1>
+    </div>
+    <div slot="end" class="ion-margin">
+      <ion-button shape="round" size="small" (click)="navigateTheme()">
+        Tema
+        <ion-icon slot="start" name="color-wand-outline"></ion-icon>
+      </ion-button>
+    </div>
+   </ion-toolbar>
+</ion-header>
 <ion-content [fullscreen]="true" class="no-scroll">
   <div class="page-container">
     <div class="centrar">
@@ -47,7 +63,7 @@
       <a href="/ruta">{{ 'login.button.route' | translate }}</a>
     </div>
     <div class="ion-text-center">
-      <a href="/registrarme">{{ 'Login.Button.Login' | translate }}</a>
+      <a href="/registrarme">{{ 'Login.Button.Signin' | translate }}</a>
     </div>
   </div>
 </ion-content>
