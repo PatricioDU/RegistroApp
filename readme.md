@@ -1,14 +1,3 @@
-<<<<<<< Updated upstream
-# RegistroApp
-
-Aplicación móvil para el registro de asistencia estudiantil mediante escaneo de códigos QR.
-
-## Descripción
-
-RegistroApp es una aplicación híbrida orientada a facilitar el control de asistencia en el ámbito educativo. Los estudiantes pueden iniciar sesión con sus credenciales, consultar sus clases asignadas, escanear un código QR para registrar su ingreso y revisar su información personal desde la misma app.
-
-La aplicación funciona tanto en el navegador web como instalada en dispositivos Android, gracias al uso de Capacitor como puente nativo. Los datos se almacenan de forma local mediante SQLite, lo que permite operar sin conexión continua a internet. Además incorpora geolocalización como validación adicional de presencia durante el registro de asistencia.
-=======
 # RegistroAppDino
 
 Aplicación móvil de registro de asistencia estudiantil con escaneo QR, mapa de ruta a la sede, foro de publicaciones y soporte multiidioma.
@@ -18,7 +7,6 @@ Aplicación móvil de registro de asistencia estudiantil con escaneo QR, mapa de
 RegistroAppDino es una aplicación híbrida desarrollada para gestionar la asistencia en clases dentro del contexto educativo de DUOC UC. El estudiante puede crear su cuenta, iniciar sesión y registrar su asistencia escaneando un código QR que entrega el docente al inicio de cada sesión, recibiendo confirmación inmediata de si el ingreso fue correcto o no.
 
 Además del flujo de asistencia, la app incluye un mapa interactivo que muestra la ubicación actual del usuario y traza una ruta hasta la sede, un foro con publicaciones institucionales consumido desde una API simulada, y un selector de idioma que soporta español, inglés y mapudungun. Los datos del usuario se persisten localmente mediante SQLite, lo que permite operar sin conexión continua a internet.
->>>>>>> Stashed changes
 
 ## Tecnologías
 
@@ -27,18 +15,11 @@ Además del flujo de asistencia, la app incluye un mapa interactivo que muestra 
 - Capacitor
 - TypeScript
 - SQLite (via @capacitor-community/sqlite)
-<<<<<<< Updated upstream
-- html5-qrcode / jsqr (escaneo de QR y códigos de barras)
-- Leaflet (mapas)
-- Angular Material 18
-- JSON Server (mock API para desarrollo local)
-=======
 - html5-qrcode / jsqr (escaneo de QR)
 - Leaflet + OpenStreetMap (mapa interactivo)
 - @ngx-translate (soporte multiidioma: ES, EN, ARN)
 - Angular Material 18
 - JSON Server (API simulada para foro y usuarios)
->>>>>>> Stashed changes
 
 ## Uso
 
@@ -46,22 +27,14 @@ Además del flujo de asistencia, la app incluye un mapa interactivo que muestra 
 
 - Node.js 18 o superior
 - npm
-<<<<<<< Updated upstream
-- Ionic CLI instalado globalmente:
-=======
 - Android Studio (para ejecutar en dispositivo o emulador Android)
 - Ionic CLI:
->>>>>>> Stashed changes
 
 ```bash
 npm install -g @ionic/cli
 ```
 
-<<<<<<< Updated upstream
-- Angular CLI instalado globalmente:
-=======
 - Angular CLI:
->>>>>>> Stashed changes
 
 ```bash
 npm install -g @angular/cli
@@ -69,41 +42,6 @@ npm install -g @angular/cli
 
 ### Instalación
 
-<<<<<<< Updated upstream
-```bash
-git clone https://github.com/PatricioDU/RegistroApp.git
-cd RegistroApp
-npm install
-```
-
-### Ejecución en el navegador
-
-```bash
-npm start
-```
-
-La aplicación queda disponible en `http://localhost:4200`.
-
-### API de desarrollo (JSON Server)
-
-El proyecto incluye una carpeta `_JSON-SERVER/` con datos de prueba. Para levantar el servidor simulado en paralelo:
-
-```bash
-npx json-server --watch _JSON-SERVER/db.json
-```
-
-### Compilar y ejecutar en Android
-
-Asegúrate de tener Android Studio instalado y configurado antes de continuar.
-
-```bash
-npm run build
-npx cap sync android
-npx cap open android
-```
-
-Desde Android Studio puedes ejecutar la app en un emulador o en un dispositivo físico conectado.
-=======
 Clona el repositorio e instala las dependencias:
 
 ```bash
@@ -194,4 +132,3 @@ Cuando el estudiante abre la app por primera vez, accede a la pantalla de ingres
 Una vez dentro, el estudiante ve sus clases asignadas y puede escanear el código QR que entrega el docente al inicio de cada sesión. La app valida el código y muestra una pantalla de confirmación indicando si el registro fue exitoso o si hubo algún problema.
 
 Desde el menú también puede consultar el mapa, que detecta su ubicación actual y traza la ruta hasta la sede de DUOC UC. Si olvidó su contraseña, puede recuperarla ingresando su correo y respondiendo la pregunta secreta que configuró al registrarse.
->>>>>>> Stashed changes
