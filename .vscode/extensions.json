@@ -1,7 +1,7 @@
 {
   "recommendations": [
-    "ionic.ionic",
     "shd101wyy.markdown-preview-enhanced",
-    "wxlim.android-webview-debug"
+    "wxlim.android-webview-debug",
+    "Webnative.webnative"
   ]
 }
